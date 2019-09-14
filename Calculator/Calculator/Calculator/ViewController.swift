@@ -9,19 +9,30 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //FIX: If app is opened in landscape portraitView is showed
+    @IBOutlet var portraitView: UIView!
     
-    @IBOutlet weak var display: UILabel!
-    
-    @IBAction func buttonPressed(_ sender: Any) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        if UIDevice.current.orientation.isLandscape {
+            self.view = LandscapeView()
+        }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
     }
 
-
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        if UIDevice.current.orientation.isLandscape {
+            self.view = LandscapeView()
+        } else if UIDevice.current.orientation.isPortrait {
+            self.view = portraitView
+        }
+        
+    }
 }
 
