@@ -25,9 +25,7 @@ class ViewController: UIViewController {
             return 0.0
         }
         set {
-            if let displayText = display.text {
-                display.text = displayText + String(newValue)
-            }
+            display.text = String(Int(newValue))
         }
     }
     
@@ -65,6 +63,11 @@ class ViewController: UIViewController {
             display.text = display.text! + sender.currentTitle!
         }
         userIsTyping = true
+    }
+    
+    @IBAction func clearAllButton(_ sender: UIButton) {
+        userIsTyping = false
+        displayValue = 0.0
     }
     
 }
