@@ -12,8 +12,7 @@
 		1D7B77D423265CC500AE2A70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7B77D223265CC500AE2A70 /* Main.storyboard */; };
 		1D7B77D623265CC900AE2A70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D7B77D523265CC900AE2A70 /* Assets.xcassets */; };
 		1D7B77D923265CC900AE2A70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7B77D723265CC900AE2A70 /* LaunchScreen.storyboard */; };
-		1DA25F04232CD90900DD475C /* LandscapeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DA25F03232CD90900DD475C /* LandscapeView.xib */; };
-		1DA25F08232CE99500DD475C /* LandscapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA25F07232CE99500DD475C /* LandscapeView.swift */; };
+		1DB43BC2232D58C40032B676 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB43BC1232D58C40032B676 /* Operation.swift */; };
 		1DD162E223295E4200A49C97 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD162E123295E4200A49C97 /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,8 +24,7 @@
 		1D7B77D523265CC900AE2A70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D7B77D823265CC900AE2A70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D7B77DA23265CC900AE2A70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1DA25F03232CD90900DD475C /* LandscapeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LandscapeView.xib; sourceTree = "<group>"; };
-		1DA25F07232CE99500DD475C /* LandscapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeView.swift; sourceTree = "<group>"; };
+		1DB43BC1232D58C40032B676 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		1DD162E123295E4200A49C97 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D4750B4232D5859006C0A69 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1DB43BC1232D58C40032B676 /* Operation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1D7B77C223265CC400AE2A70 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +66,7 @@
 		1D7B77CD23265CC500AE2A70 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				1D4750B4232D5859006C0A69 /* Models */,
 				1DD162E023295E2700A49C97 /* Views */,
 				1D7B77CE23265CC500AE2A70 /* AppDelegate.swift */,
 				1D7B77D023265CC500AE2A70 /* ViewController.swift */,
@@ -71,12 +78,18 @@
 			path = Calculator;
 			sourceTree = "<group>";
 		};
-		1DD162E023295E2700A49C97 /* Views */ = {
+		1DB43BC0232D58A10032B676 /* RoundedButton */ = {
 			isa = PBXGroup;
 			children = (
 				1DD162E123295E4200A49C97 /* RoundedButton.swift */,
-				1DA25F03232CD90900DD475C /* LandscapeView.xib */,
-				1DA25F07232CE99500DD475C /* LandscapeView.swift */,
+			);
+			path = RoundedButton;
+			sourceTree = "<group>";
+		};
+		1DD162E023295E2700A49C97 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1DB43BC0232D58A10032B676 /* RoundedButton */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -139,7 +152,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DA25F04232CD90900DD475C /* LandscapeView.xib in Resources */,
 				1D7B77D923265CC900AE2A70 /* LaunchScreen.storyboard in Resources */,
 				1D7B77D623265CC900AE2A70 /* Assets.xcassets in Resources */,
 				1D7B77D423265CC500AE2A70 /* Main.storyboard in Resources */,
@@ -153,9 +165,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DA25F08232CE99500DD475C /* LandscapeView.swift in Sources */,
 				1D7B77D123265CC500AE2A70 /* ViewController.swift in Sources */,
 				1DD162E223295E4200A49C97 /* RoundedButton.swift in Sources */,
+				1DB43BC2232D58C40032B676 /* Operation.swift in Sources */,
 				1D7B77CF23265CC500AE2A70 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,29 +10,31 @@ import UIKit
 
 class ViewController: UIViewController {
     //FIX: If app is opened in landscape portraitView is showed
-    @IBOutlet var portraitView: UIView!
+    @IBOutlet weak var additionalButtons: UIStackView!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if UIDevice.current.orientation.isLandscape {
-            self.view = LandscapeView()
+    @IBOutlet weak var display: UILabel!
+    
+    var isLandscapeOrientation: Bool = UIDevice.current.orientation.isLandscape {
+        willSet {
+            additionalButtons.isHidden = !newValue
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        isLandscapeOrientation = UIDevice.current.orientation.isLandscape
     }
-
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         
-        if UIDevice.current.orientation.isLandscape {
-            self.view = LandscapeView()
-        } else if UIDevice.current.orientation.isPortrait {
-            self.view = portraitView
-        }
+        isLandscapeOrientation = UIDevice.current.orientation.isLandscape
+    }
+    
+    @IBAction func touchButton(_ sender: UIButton) {
         
     }
+    
 }
 
