@@ -14,6 +14,23 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var display: UILabel!
     
+    var userIsTyping = false
+    
+    var displayValue: Double {
+        get {
+            if let value = display.text,
+               let _ = Double(value) {
+                return Double(value)!
+            }
+            return 0.0
+        }
+        set {
+            if let displayText = display.text {
+                display.text = displayText + String(newValue)
+            }
+        }
+    }
+    
     var isLandscapeOrientation: Bool = UIDevice.current.orientation.isLandscape {
         willSet {
             additionalButtons.isHidden = !newValue
@@ -32,9 +49,22 @@ class ViewController: UIViewController {
         isLandscapeOrientation = UIDevice.current.orientation.isLandscape
     }
     
-    @IBAction func touchButton(_ sender: UIButton) {
-        
+    @IBAction func touchDigit(_ sender: UIButton) {
+        if let title = sender.currentTitle {
+            if userIsTyping {
+                display.text = display.text! + title
+            } else {
+                display.text = title
+                userIsTyping = true
+            }
+        }
+    }
+    
+    @IBAction func touchFloatingPoint(_ sender: UIButton) {
+        if !display.text!.contains(sender.currentTitle!) {
+            display.text = display.text! + sender.currentTitle!
+        }
+        userIsTyping = true
     }
     
 }
-
