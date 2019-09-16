@@ -139,6 +139,9 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IfI-Hj-2f1"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tA-X0-PoL" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="73" y="0.0" width="65" height="55"/>
@@ -415,7 +418,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYM-gk-6an" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="73" y="0.0" width="65" height="55"/>
-                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <color key="backgroundColor" red="0.12156862745098039" green="0.12941176470588234" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="sinh">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -495,7 +498,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwq-g2-Jba" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="65" height="55"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" red="0.66666668653488159" green="0.66666666666666663" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="91" id="NgP-rp-tTy">
                                                         <variation key="heightClass=compact-widthClass=regular" constant="55"/>
@@ -895,6 +898,16 @@
                         <outlet property="additionalButtons" destination="J8H-Yf-gpT" id="K6w-ma-oLt"/>
                         <outlet property="clearButton" destination="Pwq-g2-Jba" id="DFb-vs-uz6"/>
                         <outlet property="display" destination="mde-Oy-3wx" id="HFY-3Y-xYc"/>
+                        <outletCollection property="flippyButtons" destination="i8J-Af-Wih" collectionClass="NSMutableArray" id="bz6-WQ-r9d"/>
+                        <outletCollection property="flippyButtons" destination="Cca-uI-Li6" collectionClass="NSMutableArray" id="vFe-NZ-j5X"/>
+                        <outletCollection property="flippyButtons" destination="znN-hr-K0T" collectionClass="NSMutableArray" id="UDF-Bz-wYu"/>
+                        <outletCollection property="flippyButtons" destination="RKN-IL-HxR" collectionClass="NSMutableArray" id="Krf-1x-FvS"/>
+                        <outletCollection property="flippyButtons" destination="PLu-Ig-VPt" collectionClass="NSMutableArray" id="37n-vX-mtS"/>
+                        <outletCollection property="flippyButtons" destination="aP0-FY-fOy" collectionClass="NSMutableArray" id="gh7-Nm-iL9"/>
+                        <outletCollection property="flippyButtons" destination="MWx-FX-als" collectionClass="NSMutableArray" id="K71-xz-EXN"/>
+                        <outletCollection property="flippyButtons" destination="PZf-2e-T8h" collectionClass="NSMutableArray" id="UwI-Uj-dil"/>
+                        <outletCollection property="flippyButtons" destination="Gd1-QL-nQR" collectionClass="NSMutableArray" id="Urb-gN-ahW"/>
+                        <outletCollection property="flippyButtons" destination="wYM-gk-6an" collectionClass="NSMutableArray" id="Z1c-bg-lVd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

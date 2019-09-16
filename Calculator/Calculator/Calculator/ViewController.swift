@@ -10,6 +10,35 @@ import UIKit
 
 class ViewController: UIViewController {
     //FIX: If app is opened in landscape portraitView is showed
+    
+    private var isSecond: Bool = false
+    
+    private let secondTextVariation: [String: String] = [
+        "sin": "sin⁻¹",
+        "cos": "cos⁻¹",
+        "tan": "tan⁻¹",
+        "sinh": "sinh⁻¹",
+        "cosh": "cosh⁻¹",
+        "tanh": "tanh⁻¹",
+        "eˣ": "yˣ",
+        "ln": "logy",
+        "10ˣ": "2ˣ",
+        "log₁₀": "log₂"
+    ]
+    
+    private let initialTextVariation: [String: String] = [
+        "sin⁻¹": "sin",
+        "cos⁻¹": "cos",
+        "tan⁻¹": "tan",
+        "sinh⁻¹": "sinh",
+        "cosh⁻¹": "cosh",
+        "tanh⁻¹": "tanh",
+        "yˣ": "eˣ",
+        "logy": "ln",
+        "2ˣ": "10ˣ",
+        "log₂": "log₁₀"
+    ]
+    
     @IBOutlet weak var additionalButtons: UIStackView!
     
     @IBOutlet weak var display: UILabel!
@@ -86,6 +115,7 @@ class ViewController: UIViewController {
         calculator.clear()
     }
     
+    
     @IBAction func performOperation(_ sender: UIButton) {
         if userIsTyping {
             calculator.set(operand: Double(display.text!)!)
@@ -95,5 +125,35 @@ class ViewController: UIViewController {
             calculator.performOperation(mathOperator)
         }
         display.text = String(calculator.result)
+    }
+    
+    @IBOutlet var flippyButtons: [UIButton]!
+    
+    @IBAction func changeButtons(_ sender: UIButton) {
+        isSecond = !isSecond
+        changeButtonParameters(for: sender)
+        if isSecond {
+            for button in flippyButtons {
+                if let title = button.currentTitle {
+                    button.setTitle(secondTextVariation[title], for: .normal)
+                }
+            }
+        } else {
+            for button in flippyButtons {
+                if let title = button.currentTitle {
+                    button.setTitle(initialTextVariation[title], for: .normal)
+                }
+            }
+        }
+    }
+    
+    func changeButtonParameters(for button: UIButton) {
+        if isSecond {
+            button.backgroundColor = .white
+            button.setTitleColor(.black, for: .normal)
+        } else {
+            button.backgroundColor = #colorLiteral(red: 0.1215686277, green: 0.1294117719, blue: 0.1411764771, alpha: 1)
+            button.setTitleColor(.white, for: .normal)
+        }
     }
 }

@@ -55,6 +55,16 @@ struct Calculator {
         "xʸ": Operation.binary{ pow($0, $1) },
         "x!": Operation.unary(factorial),
         "EE": Operation.binary{ $0 * pow(10, $1) },
+        "sin⁻¹": Operation.unary{ pow(sin($0), -1) },
+        "cos⁻¹": Operation.unary{ pow(cos($0), -1) },
+        "tan⁻¹": Operation.unary{ pow(tan($0), -1) },
+        "sinh⁻¹": Operation.unary{ pow(sinh($0), -1) },
+        "cosh⁻¹": Operation.unary{ pow(cosh($0), -1) },
+        "tanh⁻¹": Operation.unary{ pow(tanh($0), -1) },
+        "yˣ": Operation.binary{ pow($1, $0) },
+        "logy": Operation.binary{ log($0)/log($1) },
+        "2ˣ": Operation.unary{ pow(2, $0) },
+        "log₂": Operation.unary{ log($0)/log(2) },
         "Rand": Operation.operationWithoutParameters{ Double(drand48()) }
     ]
     
