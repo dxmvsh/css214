@@ -16,7 +16,6 @@ struct PendingBinaryOperation {
 struct Calculator {
     
     private var operand: Double = 0
-    
     private var pending: PendingBinaryOperation?
     private var memorySavedValue: Double = 0
     
@@ -26,7 +25,7 @@ struct Calculator {
         }
     }
     
-    let operations: [String: Operation] = [
+    private let operations: [String: Operation] = [
         "=": Operation.equals,
         "⁺∕₋": Operation.unary{-$0},
         "×": Operation.binary(*),

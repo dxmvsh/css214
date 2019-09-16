@@ -9,42 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    //FIX: If app is opened in landscape portraitView is showed
-    
-    private var isSecond: Bool = false
-    
-    private let secondTextVariation: [String: String] = [
-        "sin": "sin⁻¹",
-        "cos": "cos⁻¹",
-        "tan": "tan⁻¹",
-        "sinh": "sinh⁻¹",
-        "cosh": "cosh⁻¹",
-        "tanh": "tanh⁻¹",
-        "eˣ": "yˣ",
-        "ln": "logᵧ",
-        "10ˣ": "2ˣ",
-        "log₁₀": "log₂"
-    ]
-    
-    private let initialTextVariation: [String: String] = [
-        "sin⁻¹": "sin",
-        "cos⁻¹": "cos",
-        "tan⁻¹": "tan",
-        "sinh⁻¹": "sinh",
-        "cosh⁻¹": "cosh",
-        "tanh⁻¹": "tanh",
-        "yˣ": "eˣ",
-        "logᵧ": "ln",
-        "2ˣ": "10ˣ",
-        "log₂": "log₁₀"
-    ]
-    
-    @IBOutlet weak var additionalButtons: UIStackView!
-    @IBOutlet var flippyButtons: [UIButton]!
-    
-    @IBOutlet weak var display: UILabel!
-    
-    @IBOutlet var clearButton: RoundedButton!
     
     var calculator = Calculator()
     
@@ -76,6 +40,30 @@ class ViewController: UIViewController {
         }
     }
     
+    private var isSecond: Bool = false
+    
+    private let secondTextVariation: [String: String] = [
+        "sin": "sin⁻¹",
+        "cos": "cos⁻¹",
+        "tan": "tan⁻¹",
+        "sinh": "sinh⁻¹",
+        "cosh": "cosh⁻¹",
+        "tanh": "tanh⁻¹",
+        "eˣ": "yˣ",
+        "ln": "logᵧ",
+        "10ˣ": "2ˣ",
+        "log₁₀": "log₂"
+    ]
+    
+    // MARK: Outlets
+    @IBOutlet weak var additionalButtons: UIStackView!
+    @IBOutlet var flippyButtons: [UIButton]!
+    
+    @IBOutlet weak var display: UILabel!
+    
+    @IBOutlet var clearButton: RoundedButton!
+    
+    // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -88,6 +76,7 @@ class ViewController: UIViewController {
         isLandscapeOrientation = UIDevice.current.orientation.isLandscape
     }
     
+    // MARK: Actions
     @IBAction func touchDigit(_ sender: UIButton) {
         if let title = sender.currentTitle {
             if userIsTyping {
@@ -131,6 +120,11 @@ class ViewController: UIViewController {
         }
     }
     
+}
+
+extension ViewController {
+    
+    // MARK: Helper functions
     func changeParameters(of button: UIButton) {
         if isSecond {
             button.backgroundColor = .white
@@ -143,9 +137,15 @@ class ViewController: UIViewController {
     
     func changeText(of button: UIButton) {
         if let title = button.currentTitle {
-            button.setTitle(isSecond ? secondTextVariation[title] : initialTextVariation[title],
+            button.setTitle(isSecond ? secondTextVariation[title] : secondTextVariation.key(for: title),
                             for: .normal)
         }
     }
     
+}
+
+extension Dictionary where Key == String, Value: Equatable {
+    func key(for value: Value) -> Key? {
+        return compactMap { value == $1 ? $0 : nil }.first
+    }
 }
