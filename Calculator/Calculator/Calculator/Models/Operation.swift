@@ -15,10 +15,3 @@ enum Operation {
     case binary((Double, Double) -> Double)
     case operationWithoutParameters(() -> Double)
 }
-
-enum MemoryOperation {
-    case add(Double)
-    case substract(Double)
-    case result
-    case clear
-}

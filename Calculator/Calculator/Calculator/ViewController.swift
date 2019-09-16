@@ -14,9 +14,22 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var display: UILabel!
     
+    @IBOutlet var clearButton: RoundedButton!
+    
     var calculator = Calculator()
     
-    var userIsTyping = false
+    var userIsTyping: Bool {
+        set {
+            if newValue {
+                clearButton.setTitle("C", for: .normal)
+            } else {
+                clearButton.setTitle("AC", for: .normal)
+            }
+        }
+        get {
+            return clearButton.currentTitle! == "C"
+        }
+    }
     
     var displayValue: Double {
         get {
@@ -74,7 +87,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func performOperation(_ sender: UIButton) {
-        
         if userIsTyping {
             calculator.set(operand: Double(display.text!)!)
             userIsTyping = false

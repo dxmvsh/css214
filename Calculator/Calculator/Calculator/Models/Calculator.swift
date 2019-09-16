@@ -8,31 +8,23 @@
 
 import Foundation
 
-func factorial(of value: Double) -> Double {
-    var result = 1.0
-    for number in 2...Int(value) {
-        result = result * Double(number)
-    }
-    return result
+struct PendingBinaryOperation {
+    var firstOperand: Double
+    var operation: (Double, Double) -> Double
 }
 
 struct Calculator {
     
     private var operand: Double = 0
-    private var memory: Double = 0
+    
     private var pending: PendingBinaryOperation?
+    private var memorySavedValue: Double = 0
+    
     var result: Double {
         get {
             return operand
         }
     }
-    
-    let memoryOperations: [String: MemoryOperation] = [
-        "mc": MemoryOperation.clear,
-        "m+": MemoryOperation.add(operand),
-        "m-": MemoryOperation.substract(operand),
-        "mr": MemoryOperation.result
-    ]
     
     let operations: [String: Operation] = [
         "=": Operation.equals,
@@ -71,6 +63,23 @@ struct Calculator {
     }
     
     mutating func performOperation(_ symbol: String) {
+        
+        switch symbol {
+        case "m+":
+            memorySavedValue = memorySavedValue + result
+            operand = 0
+        case "m-":
+            memorySavedValue = memorySavedValue - result
+            operand = 0
+        case "mc":
+            memorySavedValue = 0
+            operand = 0
+        case "mr":
+            operand = memorySavedValue
+        default:
+            break
+        }
+        
         if let operation = operations[symbol] {
             switch operation {
             case .binary(let function):
@@ -84,18 +93,6 @@ struct Calculator {
                 operand = constant
             case .equals:
                 executeOperation()
-                }
-        }
-        if let operation = memoryOperations[symbol] {
-            switch operation {
-            case .add(let value):
-                memory = memory + value
-            case .substract(let value):
-                memory = memory - value
-            case .result:
-                operand = memory
-            case .clear:
-                memory = 0
             }
         }
     }
@@ -113,7 +110,10 @@ struct Calculator {
     }
 }
 
-struct PendingBinaryOperation {
-    var firstOperand: Double
-    var operation: (Double, Double) -> Double
+func factorial(of value: Double) -> Double {
+    var result = 1.0
+    for number in 2...Int(value) {
+        result = result * Double(number)
+    }
+    return result
 }
