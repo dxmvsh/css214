@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         "cosh": "cosh⁻¹",
         "tanh": "tanh⁻¹",
         "eˣ": "yˣ",
-        "ln": "logy",
+        "ln": "logᵧ",
         "10ˣ": "2ˣ",
         "log₁₀": "log₂"
     ]
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         "cosh⁻¹": "cosh",
         "tanh⁻¹": "tanh",
         "yˣ": "eˣ",
-        "logy": "ln",
+        "logᵧ": "ln",
         "2ˣ": "10ˣ",
         "log₂": "log₁₀"
     ]
