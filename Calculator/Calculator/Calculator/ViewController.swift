@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var display: UILabel!
     
+    var calculator = Calculator()
+    
     var userIsTyping = false
     
     var displayValue: Double {
@@ -70,4 +72,15 @@ class ViewController: UIViewController {
         displayValue = 0.0
     }
     
+    @IBAction func performOperation(_ sender: UIButton) {
+        
+        if userIsTyping {
+            calculator.set(operand: Double(display.text!)!)
+            userIsTyping = false
+        }
+        if let mathOperator = sender.currentTitle {
+            calculator.performOperation(mathOperator)
+        }
+        display.text = String(calculator.result)
+    }
 }
