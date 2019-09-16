@@ -40,6 +40,7 @@ class ViewController: UIViewController {
     ]
     
     @IBOutlet weak var additionalButtons: UIStackView!
+    @IBOutlet var flippyButtons: [UIButton]!
     
     @IBOutlet weak var display: UILabel!
     
@@ -49,11 +50,7 @@ class ViewController: UIViewController {
     
     var userIsTyping: Bool {
         set {
-            if newValue {
-                clearButton.setTitle("C", for: .normal)
-            } else {
-                clearButton.setTitle("AC", for: .normal)
-            }
+            
         }
         get {
             return clearButton.currentTitle! == "C"
@@ -115,7 +112,6 @@ class ViewController: UIViewController {
         calculator.clear()
     }
     
-    
     @IBAction func performOperation(_ sender: UIButton) {
         if userIsTyping {
             calculator.set(operand: Double(display.text!)!)
@@ -127,27 +123,15 @@ class ViewController: UIViewController {
         display.text = String(calculator.result)
     }
     
-    @IBOutlet var flippyButtons: [UIButton]!
-    
     @IBAction func changeButtons(_ sender: UIButton) {
         isSecond = !isSecond
-        changeButtonParameters(for: sender)
-        if isSecond {
-            for button in flippyButtons {
-                if let title = button.currentTitle {
-                    button.setTitle(secondTextVariation[title], for: .normal)
-                }
-            }
-        } else {
-            for button in flippyButtons {
-                if let title = button.currentTitle {
-                    button.setTitle(initialTextVariation[title], for: .normal)
-                }
-            }
+        changeParameters(of: sender)
+        for button in flippyButtons {
+            changeText(of: button)
         }
     }
     
-    func changeButtonParameters(for button: UIButton) {
+    func changeParameters(of button: UIButton) {
         if isSecond {
             button.backgroundColor = .white
             button.setTitleColor(.black, for: .normal)
@@ -156,4 +140,12 @@ class ViewController: UIViewController {
             button.setTitleColor(.white, for: .normal)
         }
     }
+    
+    func changeText(of button: UIButton) {
+        if let title = button.currentTitle {
+            button.setTitle(isSecond ? secondTextVariation[title] : initialTextVariation[title],
+                            for: .normal)
+        }
+    }
+    
 }
