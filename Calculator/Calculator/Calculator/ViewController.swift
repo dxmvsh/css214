@@ -67,9 +67,10 @@ class ViewController: UIViewController {
         userIsTyping = true
     }
     
-    @IBAction func clearAllButton(_ sender: UIButton) {
+    @IBAction func clearAll(_ sender: UIButton) {
         userIsTyping = false
         displayValue = 0.0
+        calculator.clear()
     }
     
     @IBAction func performOperation(_ sender: UIButton) {

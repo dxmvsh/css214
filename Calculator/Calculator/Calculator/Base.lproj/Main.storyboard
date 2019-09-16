@@ -503,7 +503,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="clearAllButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vX7-Tl-7FC"/>
+                                                    <action selector="clearAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cuB-CN-JFk"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZ7-yh-9pT" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">

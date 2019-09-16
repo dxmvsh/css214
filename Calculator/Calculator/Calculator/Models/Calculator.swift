@@ -19,12 +19,21 @@ func factorial(of value: Double) -> Double {
 struct Calculator {
     
     private var operand: Double = 0
+    private var memory: Double = 0
     private var pending: PendingBinaryOperation?
     var result: Double {
-        get{
+        get {
             return operand
         }
     }
+    
+    let memoryOperations: [String: MemoryOperation] = [
+        "mc": MemoryOperation.clear,
+        "m+": MemoryOperation.add(operand),
+        "m-": MemoryOperation.substract(operand),
+        "mr": MemoryOperation.result
+    ]
+    
     let operations: [String: Operation] = [
         "=": Operation.equals,
         "⁺∕₋": Operation.unary{-$0},
@@ -54,7 +63,7 @@ struct Calculator {
         "xʸ": Operation.binary{ pow($0, $1) },
         "x!": Operation.unary(factorial),
         "EE": Operation.binary{ $0 * pow(10, $1) },
-        "Rand": Operation.random{ Double(drand48()) }
+        "Rand": Operation.operationWithoutParameters{ Double(drand48()) }
     ]
     
     mutating func set(operand: Double) {
@@ -62,19 +71,32 @@ struct Calculator {
     }
     
     mutating func performOperation(_ symbol: String) {
-        guard let operation = operations[symbol] else { return }
-        switch operation {
-        case .binary(let function):
-            executeOperation()
-            pending = PendingBinaryOperation(firstOperand: operand, operation: function)
-        case .unary(let function):
-            operand = function(operand)
-        case .random(let function):
-            operand = function()
-        case .constant(let constant):
-            operand = constant
-        case .equals:
-            executeOperation()
+        if let operation = operations[symbol] {
+            switch operation {
+            case .binary(let function):
+                executeOperation()
+                pending = PendingBinaryOperation(firstOperand: operand, operation: function)
+            case .unary(let function):
+                operand = function(operand)
+            case .operationWithoutParameters(let function):
+                operand = function()
+            case .constant(let constant):
+                operand = constant
+            case .equals:
+                executeOperation()
+                }
+        }
+        if let operation = memoryOperations[symbol] {
+            switch operation {
+            case .add(let value):
+                memory = memory + value
+            case .substract(let value):
+                memory = memory - value
+            case .result:
+                operand = memory
+            case .clear:
+                memory = 0
+            }
         }
     }
     
@@ -85,6 +107,10 @@ struct Calculator {
         pending = nil
     }
     
+    mutating func clear() {
+        operand = 0.0
+        pending = nil
+    }
 }
 
 struct PendingBinaryOperation {
