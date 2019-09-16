@@ -9,8 +9,9 @@
 import Foundation
 
 enum Operation {
-    case equal
+    case equals
     case constant(Double)
     case unary((Double) -> Double)
     case binary((Double, Double) -> Double)
+    case operationWithoutParameters(() -> Double)
 }
