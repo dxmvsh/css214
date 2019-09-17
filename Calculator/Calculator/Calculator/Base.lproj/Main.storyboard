@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mde-Oy-3wx">
+                                <rect key="frame" x="89" y="20.5" width="750" height="57.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="346" id="Suw-OH-Qz4">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="750"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="60"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="50"/>
+                                </variation>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J8H-Yf-gpT">
+                                <rect key="frame" x="115" y="86" width="430" height="307"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="o5y-5d-XMb">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="55"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xqi-Ak-cYT" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="65" id="SVW-pG-hEa"/>
+                                                    <constraint firstAttribute="height" constant="55" id="tkg-Wq-cCJ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="(">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJ8-qG-Vdl" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="73" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title=")">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9S-vk-TPU" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="146" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="mc">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="glC-5G-EGS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPb-M9-9G5" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="219" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="m+">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GPH-He-Maa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmk-XB-vUa" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="292" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="m-">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xlS-L0-37q"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PV1-CJ-4j2" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="365" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="mr">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DCy-hw-yTX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hAv-Zv-eyr">
+                                        <rect key="frame" x="0.0" y="63" width="430" height="55"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcf-cs-TGp" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="65" id="A4D-g6-ofZ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="2ⁿᵈ">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IfI-Hj-2f1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tA-X0-PoL" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="73" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="x²">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="678-ge-C0i"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOd-GN-iyZ" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="146" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="x³">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zF9-9x-aUj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KPs-yl-aPL" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="219" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="xʸ">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TaE-a3-bgi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znN-hr-K0T" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="292" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="eˣ">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hDr-ZN-OcZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKN-IL-HxR" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="365" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="10ˣ">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="llw-5f-E3y"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JG8-Q5-S0Q">
+                                        <rect key="frame" x="0.0" y="126" width="430" height="55"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwV-TY-MlW" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="65" id="D1F-ay-CTf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="¹⁄ⅹ">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M5P-8a-pcm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mm-mp-4ei" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="73" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="√ⅹ">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5LS-So-dDt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ka9-hc-8Su" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="146" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="∛ⅹ">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EJ4-ch-BP1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9F1-Pa-bwe" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="219" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="ʸ√ⅹ">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n32-SN-GaV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cca-uI-Li6" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="292" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="ln">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E1f-kD-ZpJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8J-Af-Wih" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="365" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="log₁₀">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aer-g7-Jzq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8eq-Hn-Xte">
+                                        <rect key="frame" x="0.0" y="189" width="430" height="55"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7I8-FG-ewp" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="65" id="HoX-wv-LKm"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="x!">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9TE-fC-Sqj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLu-Ig-VPt" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="73" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="sin">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s53-zt-KIx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aP0-FY-fOy" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="146" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="cos">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rpy-RI-vxy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWx-FX-als" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="219" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="tan">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dNa-dQ-sov"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w33-5t-dWg" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="292" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="e">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gKO-aT-sno"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5D-mc-8UF" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="365" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="EE">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ccN-xS-HKx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VQa-QE-9K6">
+                                        <rect key="frame" x="0.0" y="252" width="430" height="55"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mML-Vb-3Ud" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="65" id="7AK-IM-RjH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="Rad">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYM-gk-6an" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="73" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="0.12156862745098039" green="0.12941176470588234" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="sinh">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tz9-84-gG8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gd1-QL-nQR" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="146" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="cosh">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fOh-gT-BHC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZf-2e-T8h" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="219" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="tanh">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SYX-NI-XAc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCb-4C-0pi" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="292" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="π">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MNl-ci-oKB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJx-pQ-OnB" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="365" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="Rand">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Qh-hZ-EBd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="N9T-no-7lm">
+                                <rect key="frame" x="553" y="86" width="286" height="307"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="leW-ck-935">
+                                        <rect key="frame" x="0.0" y="0.0" width="284" height="55"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwq-g2-Jba" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="0.66666668653488159" green="0.66666666666666663" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="91" id="NgP-rp-tTy">
+                                                        <variation key="heightClass=compact-widthClass=regular" constant="55"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="91" id="QVy-hS-bKm">
+                                                        <variation key="heightClass=compact-widthClass=regular" constant="65"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="clearAll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cuB-CN-JFk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZ7-yh-9pT" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="73" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="⁺∕₋">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5DO-lY-KVD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0R-Eq-6xf" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="146" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="%">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4QS-tq-zHT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYu-Fb-lDi" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="219" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="÷">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="efR-2G-ea0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4iM-bN-Gbv">
+                                        <rect key="frame" x="0.0" y="63" width="284" height="55"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEe-BS-7dW" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="91" id="8Tc-8h-26N">
+                                                        <variation key="heightClass=compact-widthClass=regular" constant="65"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EOt-lY-d4m"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTJ-er-SRK" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="73" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iWB-PQ-lvN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPz-MW-7Gk" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="146" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0MJ-KJ-Q16"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6P4-Jy-E13" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="219" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="×">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e2S-3p-sUm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qJq-u3-OxL">
+                                        <rect key="frame" x="0.0" y="126" width="284" height="55"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8M-WX-pU9" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="91" id="3W3-mB-XUr">
+                                                        <variation key="heightClass=compact-widthClass=regular" constant="65"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FVy-Rv-idW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFZ-t6-dEi" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="73" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <state key="normal" title="5">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qj3-rC-Nte"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJx-Yu-Zus" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="146" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <state key="normal" title="6">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vsi-3T-Uaj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGj-Gc-gRr" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="219" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <state key="normal" title="-">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YGa-uz-9vm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="G0F-8e-kc7">
+                                        <rect key="frame" x="0.0" y="189" width="284" height="55"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpO-4M-jts" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="91" id="eC8-hs-azj">
+                                                        <variation key="heightClass=compact-widthClass=regular" constant="65"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Dk-ET-XUP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2R-3Z-kGo" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="73" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mcB-WL-sfX"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6R-ed-giw" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="146" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1sB-Sh-ECc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XuW-cY-NVP" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="219" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <state key="normal" title="+">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3kJ-xg-X2b"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="d4A-S9-PCd">
+                                        <rect key="frame" x="0.0" y="252" width="286" height="55"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exa-ZU-OYU" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="55"/>
+                                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="190" id="mhx-cf-bLI">
+                                                        <variation key="heightClass=compact-widthClass=regular" constant="140"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GIz-fO-6OD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4o1-y8-ME8" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="148" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="91" id="L4S-Lr-YPU">
+                                                        <variation key="heightClass=compact-widthClass=regular" constant="65"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title=".">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="touchFloatingPoint:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L7V-vF-bPf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qsq-VW-alJ" customClass="RoundedButton" customModule="Calculator" customModuleProvider="target">
+                                                <rect key="frame" x="221" y="0.0" width="65" height="55"/>
+                                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="91" id="CFh-dS-P1N">
+                                                        <variation key="heightClass=compact-widthClass=regular" constant="65"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <state key="normal" title="=">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=compact-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NTU-3j-3kD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mde-Oy-3wx" firstAttribute="trailing" secondItem="N9T-no-7lm" secondAttribute="trailing" id="RQb-09-7UM"/>
+                            <constraint firstItem="N9T-no-7lm" firstAttribute="leading" secondItem="J8H-Yf-gpT" secondAttribute="trailing" constant="8" symbolic="YES" id="W2I-Yx-Dt6"/>
+                            <constraint firstItem="mde-Oy-3wx" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aIW-ki-MLg"/>
+                            <constraint firstItem="N9T-no-7lm" firstAttribute="top" secondItem="mde-Oy-3wx" secondAttribute="bottom" constant="8" symbolic="YES" id="aNC-sB-hl2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J8H-Yf-gpT" secondAttribute="bottom" id="cwC-e8-oPE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N9T-no-7lm" secondAttribute="trailing" constant="13" id="lBv-mN-9cO"/>
+                            <constraint firstItem="N9T-no-7lm" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="oBr-OX-4Oi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="additionalButtons" destination="J8H-Yf-gpT" id="K6w-ma-oLt"/>
+                        <outlet property="clearButton" destination="Pwq-g2-Jba" id="DFb-vs-uz6"/>
+                        <outlet property="display" destination="mde-Oy-3wx" id="HFY-3Y-xYc"/>
+                        <outletCollection property="flippyButtons" destination="i8J-Af-Wih" collectionClass="NSMutableArray" id="bz6-WQ-r9d"/>
+                        <outletCollection property="flippyButtons" destination="Cca-uI-Li6" collectionClass="NSMutableArray" id="vFe-NZ-j5X"/>
+                        <outletCollection property="flippyButtons" destination="znN-hr-K0T" collectionClass="NSMutableArray" id="UDF-Bz-wYu"/>
+                        <outletCollection property="flippyButtons" destination="RKN-IL-HxR" collectionClass="NSMutableArray" id="Krf-1x-FvS"/>
+                        <outletCollection property="flippyButtons" destination="PLu-Ig-VPt" collectionClass="NSMutableArray" id="37n-vX-mtS"/>
+                        <outletCollection property="flippyButtons" destination="aP0-FY-fOy" collectionClass="NSMutableArray" id="gh7-Nm-iL9"/>
+                        <outletCollection property="flippyButtons" destination="MWx-FX-als" collectionClass="NSMutableArray" id="K71-xz-EXN"/>
+                        <outletCollection property="flippyButtons" destination="PZf-2e-T8h" collectionClass="NSMutableArray" id="UwI-Uj-dil"/>
+                        <outletCollection property="flippyButtons" destination="Gd1-QL-nQR" collectionClass="NSMutableArray" id="Urb-gN-ahW"/>
+                        <outletCollection property="flippyButtons" destination="wYM-gk-6an" collectionClass="NSMutableArray" id="Z1c-bg-lVd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135.9375" y="107.24637681159422"/>
+        </scene>
+    </scenes>
+</document>
