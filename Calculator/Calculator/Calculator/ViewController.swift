@@ -14,7 +14,11 @@ class ViewController: UIViewController {
     
     var userIsTyping: Bool {
         set {
-            
+            if newValue {
+                clearButton.setTitle("C", for: .normal)
+            } else {
+                clearButton.setTitle("AC", for: .normal)
+            }
         }
         get {
             return clearButton.currentTitle! == "C"
