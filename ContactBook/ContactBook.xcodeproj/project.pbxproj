@@ -47,12 +47,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D56B186233690E400BB29FC /* New Group */ = {
+		1D56B186233690E400BB29FC /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				1D56B18423368B0D00BB29FC /* DataManager.swift */,
 			);
-			path = "New Group";
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		1D637A8723350208007B92A7 /* Controllers */ = {
@@ -84,7 +84,7 @@
 		1D8D4AD22334C62C00E12E0D /* ContactBook */ = {
 			isa = PBXGroup;
 			children = (
-				1D56B186233690E400BB29FC /* New Group */,
+				1D56B186233690E400BB29FC /* Managers */,
 				1D637A8723350208007B92A7 /* Controllers */,
 				1D8D4AE82334C65400E12E0D /* Views */,
 				1D8D4AE72334C64400E12E0D /* Models */,
