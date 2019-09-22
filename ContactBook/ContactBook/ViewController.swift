@@ -12,22 +12,24 @@ class ViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    private var contacts: [Contact] = [
-        Contact.init("Dimash", "+7 778 497 66 89", "male"),
-        Contact.init("Alina", "+7 707 131 43 33", "female")
-        ]
+    private var dataManager = DataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
+        return dataManager.contacts.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -36,14 +38,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        detailVC.contact = contacts[indexPath.row]
+        detailVC.selectedContactIndex = indexPath.row
+        detailVC.dataManager = dataManager
         navigationController?.pushViewController(detailVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell") as? ContactCell
-        let contact = contacts[indexPath.row]
+        let contact = dataManager.contacts[indexPath.row]
         set(contact: contact, to: &cell)
         return cell!
     }
