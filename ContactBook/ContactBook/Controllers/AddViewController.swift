@@ -22,13 +22,13 @@ class AddViewController: UIViewController {
         setupView()
     }
     
-    private func setupView() {
-        phoneNumberTextField.keyboardType = .numberPad
-    }
-    
     private func setupNavigationBar() {
         navigationItem.title = "Add Contact"
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .save, target: self, action: #selector(addContactAndNavigateBack))
+    }
+    
+    private func setupView() {
+        phoneNumberTextField.keyboardType = .numberPad
     }
     
     @objc private func addContactAndNavigateBack() {
@@ -46,6 +46,7 @@ class AddViewController: UIViewController {
     }
 }
 
+// MARK:- Picker View
 extension AddViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

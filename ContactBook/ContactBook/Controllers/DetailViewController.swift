@@ -29,24 +29,19 @@ class DetailViewController: UIViewController {
         tableView.reloadData()
     }
     
-    func setupView() {
-        self.name.text = dataManager?.contacts[selectedContactIndex!].name
-        self.imageView.image = UIImage.init(named: dataManager?.contacts[selectedContactIndex!].gender ?? "")
-    }
-    
     private func setupNavigationBar() {
         navigationItem.title = "Details"
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .edit, target: self, action: #selector(navigateToEditVC))
     }
     
-    @objc private func navigateToEditVC() {
-        let editVC = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as! EditViewController
-        editVC.selectedContactIndex = selectedContactIndex
-        editVC.dataManager = dataManager
-        self.navigationController?.pushViewController(editVC, animated: true)
+    func setupView() {
+        self.name.text = dataManager?.contacts[selectedContactIndex!].name
+        self.imageView.image = UIImage.init(named: dataManager?.contacts[selectedContactIndex!].gender ?? "")
     }
+    
 }
 
+// MARK:- Table View
 extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,6 +63,18 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         return cell!
+    }
+    
+}
+
+// MARK:- Navigation
+extension DetailViewController {
+    
+    @objc private func navigateToEditVC() {
+        let editVC = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as! EditViewController
+        editVC.selectedContactIndex = selectedContactIndex
+        editVC.dataManager = dataManager
+        self.navigationController?.pushViewController(editVC, animated: true)
     }
     
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ListViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
@@ -31,8 +31,7 @@ class ViewController: UIViewController {
     
 }
 
-// MARK:- Table View
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataManager.contacts.count
@@ -41,6 +40,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let editAction = UITableViewRowAction.init(style: .normal, title: "Edit") { (rowAction, indexPath) in
             let editVC = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as! EditViewController
@@ -87,8 +87,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-// MARK:- Navigation
-extension ViewController {
+extension ListViewController {
     
     @objc private func navigateToAddVC() {
         let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddViewController") as! AddViewController

@@ -23,6 +23,11 @@ class EditViewController: UIViewController {
         setupView()
     }
     
+    private func setupNavigationBar() {
+        navigationItem.title = "Edit Contact"
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .save, target: self, action: #selector(saveContactAndNavigateBack))
+    }
+    
     private func setupView() {
         nameTextField.text = dataManager?.contacts[selectedContactIndex!].name
         phoneNumberTextField.text = dataManager?.contacts[selectedContactIndex!].phoneNumber
@@ -30,11 +35,6 @@ class EditViewController: UIViewController {
         
         let row = dataManager?.contacts[selectedContactIndex!].gender == "male" ? 0 : 1
         genderPickerView.selectRow(row, inComponent: 0, animated: false)
-    }
-    
-    private func setupNavigationBar() {
-        navigationItem.title = "Edit Contact"
-        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .save, target: self, action: #selector(saveContactAndNavigateBack))
     }
     
     @objc private func saveContactAndNavigateBack() {
@@ -53,6 +53,7 @@ class EditViewController: UIViewController {
     
 }
 
+// MARK:- Picker View
 extension EditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
