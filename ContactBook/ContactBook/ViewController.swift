@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,6 +24,16 @@ class ViewController: UIViewController {
         tableView.reloadData()
     }
     
+    private func setupNavigationBar() {
+        navigationItem.title = "Contacts"
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(navigateToAddVC))
+    }
+    
+    @objc private func navigateToAddVC() {
+        let addVC = self.storyboard?.instantiateViewController(withIdentifier: "AddViewController") as! AddViewController
+        addVC.dataManager = dataManager
+        navigationController?.pushViewController(addVC, animated: true)
+    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {

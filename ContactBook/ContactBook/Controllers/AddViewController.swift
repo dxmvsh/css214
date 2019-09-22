@@ -1,21 +1,20 @@
 //
-//  EditViewController.swift
+//  AddViewController.swift
 //  ContactBook
 //
-//  Created by Dimash on 9/21/19.
+//  Created by Dimash on 9/23/19.
 //  Copyright © 2019 Dimash. All rights reserved.
 //
 
 import UIKit
 
-class EditViewController: UIViewController {
+class AddViewController: UIViewController {
 
-    var selectedContactIndex: Int?
-    var dataManager: DataManager?
-    
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var phoneNumberTextField: UITextField!
     @IBOutlet var genderPickerView: UIPickerView!
+    
+    var dataManager: DataManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,24 +23,19 @@ class EditViewController: UIViewController {
     }
     
     private func setupView() {
-        nameTextField.text = dataManager?.contacts[selectedContactIndex!].name
-        phoneNumberTextField.text = dataManager?.contacts[selectedContactIndex!].phoneNumber
         phoneNumberTextField.keyboardType = .numberPad
-        
-        let row = dataManager?.contacts[selectedContactIndex!].gender == "male" ? 0 : 1
-        genderPickerView.selectRow(row, inComponent: 0, animated: false)
     }
     
     private func setupNavigationBar() {
-        navigationItem.title = "Edit Contact"
-        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .save, target: self, action: #selector(saveContactAndNavigateBack))
+        navigationItem.title = "Add Contact"
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .save, target: self, action: #selector(addContactAndNavigateBack))
     }
     
-    @objc private func saveContactAndNavigateBack() {
+    @objc private func addContactAndNavigateBack() {
         guard let name = nameTextField.text, let phoneNumber = phoneNumberTextField.text else { return }
         let gender = getGender()
-        let editedContact = Contact.init(name, phoneNumber, gender)
-        dataManager?.setContact(at: selectedContactIndex!, to: editedContact)
+        let newContact = Contact.init(name, phoneNumber, gender)
+        dataManager?.add(newContact)
         
         self.navigationController?.popViewController(animated: true)
     }
@@ -50,10 +44,9 @@ class EditViewController: UIViewController {
         let row = genderPickerView.selectedRow(inComponent: 0)
         return row == 0 ? "male" : "female"
     }
-    
 }
 
-extension EditViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension AddViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

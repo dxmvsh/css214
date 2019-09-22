@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D2478742337F57C003EF334 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2478732337F57C003EF334 /* AddViewController.swift */; };
 		1D56B1832336731E00BB29FC /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D56B1822336731E00BB29FC /* EditViewController.swift */; };
 		1D56B18523368B0D00BB29FC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D56B18423368B0D00BB29FC /* DataManager.swift */; };
 		1D637A892335022B007B92A7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D637A882335022B007B92A7 /* DetailViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D2478732337F57C003EF334 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		1D56B1822336731E00BB29FC /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 		1D56B18423368B0D00BB29FC /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = ../Models/DataManager.swift; sourceTree = "<group>"; };
 		1D637A882335022B007B92A7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				1D637A882335022B007B92A7 /* DetailViewController.swift */,
 				1D56B1822336731E00BB29FC /* EditViewController.swift */,
+				1D2478732337F57C003EF334 /* AddViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			files = (
 				1D8D4AEF2334EEFC00E12E0D /* Contact.swift in Sources */,
 				1D637A892335022B007B92A7 /* DetailViewController.swift in Sources */,
+				1D2478742337F57C003EF334 /* AddViewController.swift in Sources */,
 				1D56B1832336731E00BB29FC /* EditViewController.swift in Sources */,
 				1D56B18523368B0D00BB29FC /* DataManager.swift in Sources */,
 				1D8D4AEA2334C86A00E12E0D /* ContactCell.swift in Sources */,

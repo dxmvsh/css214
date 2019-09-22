@@ -19,6 +19,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
         setupView()
     }
     
@@ -31,7 +32,6 @@ class DetailViewController: UIViewController {
     func setupView() {
         self.name.text = dataManager?.contacts[selectedContactIndex!].name
         self.imageView.image = UIImage.init(named: dataManager?.contacts[selectedContactIndex!].gender ?? "")
-        setupNavigationBar()
     }
     
     private func setupNavigationBar() {
