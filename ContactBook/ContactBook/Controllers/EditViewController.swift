@@ -31,23 +31,19 @@ class EditViewController: UIViewController {
     
     private func setupNavigationBar() {
         navigationItem.title = "Edit Contact"
-        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .save, target: self, action: #selector(saveContact))
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .save, target: self, action: #selector(saveContactAndNavigateBack))
     }
     
-    @objc private func saveContact() {
+    @objc private func saveContactAndNavigateBack() {
         guard let name = nameTextField.text, let phoneNumber = phoneNumberTextField.text else { return }
         let gender = getGender()
         let editedContact = Contact.init(name, phoneNumber, gender)
         dataManager?.setContact(at: selectedContactIndex!, to: editedContact)
-        for contact in dataManager!.contacts {
-            print("contact.name: \(contact.name)")
-            print("contact.phoneNumber: \(contact.phoneNumber)")
-            print("contact.gender: \(contact.gender)")
-        }
         if (parent?.isKind(of: DetailViewController.self))! {
             let detailVC = parent as! DetailViewController
             detailVC.setupView()
         }
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func getGender() -> String {
