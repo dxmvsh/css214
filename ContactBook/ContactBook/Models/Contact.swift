@@ -20,12 +20,3 @@ struct Contact {
     }
     
 }
-
-extension Contact: Equatable {
-    static func == (lhs: Contact, rhs: Contact) -> Bool {
-        return
-                lhs.name == rhs.name &&
-                lhs.phoneNumber == rhs.phoneNumber &&
-                lhs.gender == rhs.gender
-    }
-}

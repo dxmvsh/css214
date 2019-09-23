@@ -41,6 +41,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let editAction = UITableViewRowAction.init(style: .normal, title: "Edit") { (rowAction, indexPath) in
             let editVC = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as! EditViewController
