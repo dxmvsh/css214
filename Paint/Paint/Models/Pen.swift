@@ -27,5 +27,4 @@ class Pen: Shape {
         path.addLine(to: endingPoint)
     }
     
-    
 }

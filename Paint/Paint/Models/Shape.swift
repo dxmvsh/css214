@@ -22,3 +22,11 @@ protocol Shape {
 extension Shape {
     var strokeWidth: CGFloat { return 4.0 }
 }
+
+enum ShapeType {
+    case circle
+    case rectangle
+    case triangle
+    case line
+    case pen
+}

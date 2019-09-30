@@ -8,14 +8,6 @@
 
 import UIKit
 
-enum ShapeType {
-    case circle
-    case rectangle
-    case triangle
-    case line
-    case pen
-}
-
 class CanvasView: UIView {
 
     var startingPoint: CGPoint?
@@ -88,8 +80,8 @@ class CanvasView: UIView {
                          endingPoint: endingPoint,
                          color: color)
         }
-        shapes.append(shape)
         shape.draw()
+        shapes.append(shape)
     }
     
     func undo() {
