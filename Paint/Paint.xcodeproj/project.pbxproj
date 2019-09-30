@@ -18,7 +18,7 @@
 		1D2BB88C23411F7200AF8521 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BB88B23411F7200AF8521 /* Rectangle.swift */; };
 		1D2BB88E2341226500AF8521 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BB88D2341226500AF8521 /* Triangle.swift */; };
 		1D2BB8902341507300AF8521 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BB88F2341507300AF8521 /* Line.swift */; };
-		1D2BB89223415CBC00AF8521 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BB89123415CBC00AF8521 /* Pencil.swift */; };
+		1D2BB89223415CBC00AF8521 /* Pen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BB89123415CBC00AF8521 /* Pen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		1D2BB88B23411F7200AF8521 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
 		1D2BB88D2341226500AF8521 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		1D2BB88F2341507300AF8521 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		1D2BB89123415CBC00AF8521 /* Pencil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
+		1D2BB89123415CBC00AF8521 /* Pen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +96,7 @@
 				1D2BB88B23411F7200AF8521 /* Rectangle.swift */,
 				1D2BB88D2341226500AF8521 /* Triangle.swift */,
 				1D2BB88F2341507300AF8521 /* Line.swift */,
-				1D2BB89123415CBC00AF8521 /* Pencil.swift */,
+				1D2BB89123415CBC00AF8521 /* Pen.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,7 +177,7 @@
 				1D2BB8722341174700AF8521 /* AppDelegate.swift in Sources */,
 				1D2BB88C23411F7200AF8521 /* Rectangle.swift in Sources */,
 				1D2BB8852341185100AF8521 /* Canvas.swift in Sources */,
-				1D2BB89223415CBC00AF8521 /* Pencil.swift in Sources */,
+				1D2BB89223415CBC00AF8521 /* Pen.swift in Sources */,
 				1D2BB8902341507300AF8521 /* Line.swift in Sources */,
 				1D2BB88E2341226500AF8521 /* Triangle.swift in Sources */,
 				1D2BB8872341187E00AF8521 /* Shape.swift in Sources */,
