@@ -94,7 +94,6 @@ class CanvasView: UIView {
     
     func undo() {
         guard !shapes.isEmpty else { return }
-        print("shapes.count: \(shapes.count)")
         shapes.removeLast()
         startingPoint = nil
         setNeedsDisplay()
