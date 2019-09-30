@@ -30,8 +30,8 @@ class ViewController: UIViewController {
             canvas.shapeType = .line
         case UIImage.init(named: "triangle"):
             canvas.shapeType = .triangle
-//        case UIImage.init(named: "pen"):
-//            canvas.shape = Pencil
+        case UIImage.init(named: "pen"):
+            canvas.shapeType = .pen
         default:
             break
         }

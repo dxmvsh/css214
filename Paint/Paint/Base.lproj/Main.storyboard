@@ -58,6 +58,9 @@
                                         <rect key="frame" x="360" y="58" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="pen"/>
+                                        <connections>
+                                            <action selector="changeShape:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F5Q-Z6-cnG"/>
+                                        </connections>
                                     </button>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jnM-IB-zVN">
                                         <rect key="frame" x="489" y="83" width="49" height="31"/>

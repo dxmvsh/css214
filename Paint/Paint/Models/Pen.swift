@@ -9,11 +9,23 @@
 import Foundation
 import UIKit
 
-class Pen {
-    var lastPoint = CGPoint.zero
-    var color = UIColor.black
-    var brushWidth: CGFloat = 10.0
-    var opacity: CGFloat = 1.0
-    var swiped = false
+class Pen: Shape {
+    var startingPoint: CGPoint
+    var endingPoint: CGPoint
+    var color: UIColor
+    var isFilled: Bool = true
+    
+    init(startingPoint: CGPoint, endingPoint: CGPoint, color: UIColor) {
+        self.startingPoint = startingPoint
+        self.endingPoint = endingPoint
+        self.color = color
+    }
+    
+    func draw() {
+        let path = UIBezierPath()
+        path.move(to: startingPoint)
+        path.addLine(to: endingPoint)
+    }
+    
     
 }

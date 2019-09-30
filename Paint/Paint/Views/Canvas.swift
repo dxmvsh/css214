@@ -41,6 +41,18 @@ class CanvasView: UIView {
         }
     }
     
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let shapeType = shapeType else { return }
+        if shapeType == .pen {
+            endingPoint = touches.first?.location(in: self)
+            shapes.append(Line(startingPoint: startingPoint!,
+                               endingPoint: endingPoint,
+                               color: color))
+            startingPoint = endingPoint
+            setNeedsDisplay()
+        }
+    }
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             endingPoint = touch.location(in: self)
@@ -71,8 +83,8 @@ class CanvasView: UIView {
             shape = Line(startingPoint: startingPoint!,
                          endingPoint: endingPoint,
                          color: color)
-        default:
-            shape = Line(startingPoint: startingPoint!,
+        case .pen:
+            shape = Pen(startingPoint: startingPoint!,
                          endingPoint: endingPoint,
                          color: color)
         }
@@ -82,6 +94,7 @@ class CanvasView: UIView {
     
     func undo() {
         guard !shapes.isEmpty else { return }
+        print("shapes.count: \(shapes.count)")
         shapes.removeLast()
         startingPoint = nil
         setNeedsDisplay()
