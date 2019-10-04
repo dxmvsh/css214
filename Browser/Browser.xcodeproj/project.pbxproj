@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		1D490C4F2344C46C001853D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D490C4E2344C46C001853D6 /* AppDelegate.swift */; };
-		1D490C512344C46C001853D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D490C502344C46C001853D6 /* ViewController.swift */; };
 		1D490C542344C46C001853D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D490C522344C46C001853D6 /* Main.storyboard */; };
 		1D490C562344C46E001853D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D490C552344C46E001853D6 /* Assets.xcassets */; };
 		1D490C592344C46E001853D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D490C572344C46E001853D6 /* LaunchScreen.storyboard */; };
+		1D490C632344CA64001853D6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D490C622344CA64001853D6 /* MasterViewController.swift */; };
+		1D490C662344CD84001853D6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D490C642344CD84001853D6 /* DetailViewController.swift */; };
+		1D490C672344CD85001853D6 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D490C652344CD84001853D6 /* DetailViewController.xib */; };
+		1D490C6A2344CE5B001853D6 /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D490C692344CE5B001853D6 /* Website.swift */; };
+		1D490C6C2344CFD5001853D6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D490C6B2344CFD5001853D6 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D490C4B2344C46C001853D6 /* Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Browser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D490C4E2344C46C001853D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1D490C502344C46C001853D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1D490C532344C46C001853D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D490C552344C46E001853D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D490C582344C46E001853D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D490C5A2344C46E001853D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D490C622344CA64001853D6 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		1D490C642344CD84001853D6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1D490C652344CD84001853D6 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		1D490C692344CE5B001853D6 /* Website.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Website.swift; sourceTree = "<group>"; };
+		1D490C6B2344CFD5001853D6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,50 @@
 		1D490C4D2344C46C001853D6 /* Browser */ = {
 			isa = PBXGroup;
 			children = (
-				1D490C4E2344C46C001853D6 /* AppDelegate.swift */,
-				1D490C502344C46C001853D6 /* ViewController.swift */,
+				1D490C682344CE49001853D6 /* Models */,
+				1D490C612344CA15001853D6 /* Controllers */,
+				1D57E077234711940074EAF3 /* Managers */,
 				1D490C522344C46C001853D6 /* Main.storyboard */,
-				1D490C552344C46E001853D6 /* Assets.xcassets */,
-				1D490C572344C46E001853D6 /* LaunchScreen.storyboard */,
+				1D490C602344C558001853D6 /* Supporting Files */,
 				1D490C5A2344C46E001853D6 /* Info.plist */,
 			);
 			path = Browser;
+			sourceTree = "<group>";
+		};
+		1D490C602344C558001853D6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D490C4E2344C46C001853D6 /* AppDelegate.swift */,
+				1D490C552344C46E001853D6 /* Assets.xcassets */,
+				1D490C572344C46E001853D6 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1D490C612344CA15001853D6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1D490C622344CA64001853D6 /* MasterViewController.swift */,
+				1D490C642344CD84001853D6 /* DetailViewController.swift */,
+				1D490C652344CD84001853D6 /* DetailViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1D490C682344CE49001853D6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1D490C692344CE5B001853D6 /* Website.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1D57E077234711940074EAF3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1D490C6B2344CFD5001853D6 /* DataManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +169,7 @@
 				1D490C592344C46E001853D6 /* LaunchScreen.storyboard in Resources */,
 				1D490C562344C46E001853D6 /* Assets.xcassets in Resources */,
 				1D490C542344C46C001853D6 /* Main.storyboard in Resources */,
+				1D490C672344CD85001853D6 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +180,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D490C512344C46C001853D6 /* ViewController.swift in Sources */,
+				1D490C662344CD84001853D6 /* DetailViewController.swift in Sources */,
+				1D490C6C2344CFD5001853D6 /* DataManager.swift in Sources */,
+				1D490C632344CA64001853D6 /* MasterViewController.swift in Sources */,
 				1D490C4F2344C46C001853D6 /* AppDelegate.swift in Sources */,
+				1D490C6A2344CE5B001853D6 /* Website.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
