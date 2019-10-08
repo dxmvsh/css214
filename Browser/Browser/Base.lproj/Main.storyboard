@@ -20,12 +20,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fSh-ud-RIf"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dGg-bN-efE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7k-fP-uf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-538" y="177"/>
+            <point key="canvasLocation" x="916.99218749999989" y="277.5988286969253"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Websites-->
         <scene sceneID="uHm-5r-y9y">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="JbO-oW-QdI" customClass="MasterViewController" customModule="Browser" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,6 +51,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="1O8-U6-btl" kind="showDetail" identifier="showWebsite" id="arG-U6-si7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -57,7 +61,7 @@
                             <outlet property="delegate" destination="JbO-oW-QdI" id="y9d-j8-n6W"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="uJK-Lo-XSM"/>
+                    <navigationItem key="navigationItem" title="Websites" id="uJK-Lo-XSM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cbl-c2-Pfm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,12 +89,33 @@
                 <splitViewController id="ZiO-FA-HWp" sceneMemberID="viewController">
                     <connections>
                         <segue destination="2GT-HR-EVd" kind="relationship" relationship="masterViewController" id="zgz-Vr-Ijm"/>
-                        <segue destination="wxS-OC-2uM" kind="relationship" relationship="detailViewController" id="3Bo-yb-XxM"/>
+                        <segue destination="1O8-U6-btl" kind="relationship" relationship="detailViewController" id="3Bo-yb-XxM"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ygD-s0-qfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1267" y="-137"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5Sj-ZN-daD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1O8-U6-btl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="byG-aP-yVp">
+                        <rect key="frame" x="0.0" y="24" width="1024" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wxS-OC-2uM" kind="relationship" relationship="rootViewController" id="U2f-6c-n3q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghR-Rn-rrY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="191.6015625" y="277.5988286969253"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3Bo-yb-XxM"/>
+    </inferredMetricsTieBreakers>
 </document>

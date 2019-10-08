@@ -11,6 +11,4 @@ import Foundation
 struct Website {
     var title: String
     var url: URL
-    
-    
 }

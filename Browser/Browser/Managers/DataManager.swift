@@ -12,7 +12,7 @@ class DataManager {
     
     private var websites = [
         Website(title: "VK", url: URL(string: "https://vk.com")!),
-        Website(title: "SDU Portal", url: URL(string: "http://my.sdu.edu.kz")!),
+        Website(title: "Google", url: URL(string: "https://google.com")!),
         Website(title: "Instagram", url: URL(string: "https://instagram.com")!)
     ]
     
