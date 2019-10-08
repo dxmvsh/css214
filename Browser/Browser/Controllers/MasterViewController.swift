@@ -41,11 +41,8 @@ class MasterViewController: UITableViewController {
                                         guard let titleTextField = alert.textFields?[0], let urlTextField = alert.textFields?[1] else { return }
                                         if let title = titleTextField.text,
                                             let urlStr = urlTextField.text {
-                                            print("title: \(title), urlStr: \(urlStr)")
                                             let website = Website(title: title, url: URL(string: urlStr)!)
                                             self.dataManager.add(website: website)
-                                            print("uialertaction:")
-                                            self.dataManager.printAllWebsitesInfo()
                                             self.tableView.reloadData()
                                         }
         }))
@@ -71,13 +68,18 @@ class MasterViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+}
+
+// MARK: Navigation
+extension MasterViewController {
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showWebsite",
             let navigationController = segue.destination as? UINavigationController,
             let destinationVC = navigationController.visibleViewController as? DetailViewController,
             let row = self.tableView.indexPathForSelectedRow?.row {
-                destinationVC.website = dataManager.getWebsite(at: row)
+            destinationVC.website = dataManager.getWebsite(at: row)
         }
     }
-
+    
 }
