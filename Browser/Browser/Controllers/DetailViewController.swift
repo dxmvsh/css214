@@ -30,7 +30,7 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
         navigationItem.title = website?.title
         // Do any additional setup after loading the view.
     }
-
+    
     private func loadWebsite() {
         if let url = website?.url {
             webView.load(URLRequest(url: url))

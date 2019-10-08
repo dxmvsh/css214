@@ -18,9 +18,11 @@ class DataManager {
     
     private var favourites = [Website]()
     
-    lazy var numberOfWebsites = {
-        return websites.count
-    }()
+    var numberOfWebsites: Int {
+        get {
+            return websites.count
+        }
+    }
     
     func add(website: Website) {
         websites.append(website)
