@@ -17,10 +17,11 @@ class DataManager {
     ]
     
     private var favourites = [Website]()
+    var isFavourites = false
     
     var numberOfWebsites: Int {
         get {
-            return websites.count
+            return isFavourites ? favourites.count : websites.count
         }
     }
     
@@ -28,12 +29,12 @@ class DataManager {
         websites.append(website)
     }
     
-    func addToFavourites(_ website: Website) {
+    func addToFavourites(website: Website) {
         favourites.append(website)
     }
     
     func getWebsite(at index: Int) -> Website {
-        return websites[index]
+        return isFavourites ? favourites[index] : websites[index]
     }
     
 }

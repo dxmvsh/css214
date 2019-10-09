@@ -14,14 +14,32 @@ class MasterViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadNavigationItem()
+        setNavigationItem()
+        setHeaderView()
     }
     
     // MARK: - Table view data source
-    private func loadNavigationItem() {
+    private func setNavigationItem() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
                                                             target: self,
                                                             action: #selector(showWebsiteAddAlert))
+    }
+    
+    private func setHeaderView() {
+        let items = ["All", "Favourites"]
+        let segmentedControl = UISegmentedControl(items: items)
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.addTarget(self, action: #selector(segmentSelected(_:)), for: UIControl.Event.valueChanged)
+        tableView.tableHeaderView = segmentedControl
+    }
+    
+    @objc private func segmentSelected(_ segmentedControl: UISegmentedControl) {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            dataManager.isFavourites = false
+        } else if segmentedControl.selectedSegmentIndex == 1 {
+            dataManager.isFavourites = true
+        }
+        tableView.reloadData()
     }
     
     @objc private func showWebsiteAddAlert() {
@@ -31,6 +49,7 @@ class MasterViewController: UITableViewController {
         alert.addTextField { (titleTextField) in
             titleTextField.placeholder = "Title"
         }
+        
         alert.addTextField { (urlTextField) in
             urlTextField.placeholder = "URL"
         }
@@ -70,7 +89,7 @@ class MasterViewController: UITableViewController {
     
 }
 
-// MARK: Navigation
+// MARK: - Navigation
 extension MasterViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,6 +98,7 @@ extension MasterViewController {
             let destinationVC = navigationController.visibleViewController as? DetailViewController,
             let row = self.tableView.indexPathForSelectedRow?.row {
             destinationVC.website = dataManager.getWebsite(at: row)
+            destinationVC.dataManager = dataManager
         }
     }
     
