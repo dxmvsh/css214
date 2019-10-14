@@ -14,9 +14,7 @@ enum ViewControllerType {
 }
 class TableViewController: UITableViewController {
     
-    var alarms: [Alarm] = [
-        Alarm(title: "CSS 214", time: Time(hour: 0, minute: 56))
-    ]
+    var alarms = [Alarm]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

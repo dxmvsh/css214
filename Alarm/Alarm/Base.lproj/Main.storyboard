@@ -43,12 +43,11 @@
                                         </switch>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="vFx-kZ-BPk" firstAttribute="leading" secondItem="1BO-zs-f8S" secondAttribute="trailing" constant="280" id="1Hz-gX-cGL"/>
                                         <constraint firstItem="1BO-zs-f8S" firstAttribute="leading" secondItem="nZ1-5x-JZ3" secondAttribute="leading" constant="20" id="8jc-vU-iYa"/>
+                                        <constraint firstAttribute="trailing" secondItem="vFx-kZ-BPk" secondAttribute="trailing" constant="20" id="iZv-Zb-Qw8"/>
                                         <constraint firstItem="1BO-zs-f8S" firstAttribute="top" secondItem="nZ1-5x-JZ3" secondAttribute="top" id="k20-DH-Ee6"/>
                                         <constraint firstItem="kfl-Eh-ifr" firstAttribute="leading" secondItem="nZ1-5x-JZ3" secondAttribute="leading" constant="20" id="s2J-0H-hi1"/>
                                         <constraint firstItem="kfl-Eh-ifr" firstAttribute="top" secondItem="1BO-zs-f8S" secondAttribute="bottom" constant="1" id="uBa-YO-Bvs"/>
-                                        <constraint firstItem="vFx-kZ-BPk" firstAttribute="leading" secondItem="kfl-Eh-ifr" secondAttribute="trailing" constant="290" id="uIo-T3-Wqp"/>
                                         <constraint firstItem="vFx-kZ-BPk" firstAttribute="centerY" secondItem="nZ1-5x-JZ3" secondAttribute="centerY" id="xrV-Jb-f6J"/>
                                     </constraints>
                                 </tableViewCellContentView>
