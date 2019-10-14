@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum ViewControllerType {
+    case addVC
+    case editVC(Int)
+}
 class TableViewController: UITableViewController {
     
     var alarms: [Alarm] = [
@@ -16,9 +20,27 @@ class TableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAlarm))
     }
-
+    
+    @objc private func addAlarm() {
+        navigate(to: .addVC)
+    }
+    
+    private func navigate(to vctype: ViewControllerType) {
+        switch vctype {
+        case .addVC:
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "AddViewController") as! AddViewController
+            vc.delegate = self
+            navigationController?.pushViewController(vc, animated: true)
+        case .editVC(let index):
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as! EditViewController
+            vc.delegate = self
+            vc.alarm = alarms[index]
+            vc.index = index
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -42,7 +64,9 @@ class TableViewController: UITableViewController {
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigate(to: .editVC(indexPath.row))
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -88,4 +112,27 @@ class TableViewController: UITableViewController {
     }
     */
 
+}
+
+extension TableViewController: AddViewControllerDelegate {
+    
+    func add(alarm: Alarm) {
+        alarms.append(alarm)
+        tableView.reloadData()
+    }
+    
+}
+
+extension TableViewController: EditViewControllerDelegate {
+    
+    func changeAlarm(at index: Int, to alarm: Alarm) {
+        alarms[index] = alarm
+        tableView.reloadData()
+    }
+    
+    func deleteAlarm(at index: Int) {
+        alarms.remove(at: index)
+        tableView.reloadData()
+    }
+    
 }

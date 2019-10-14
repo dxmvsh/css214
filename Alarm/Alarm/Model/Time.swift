@@ -9,11 +9,11 @@
 import Foundation
 
 struct Time: CustomStringConvertible {
-    
     var hour: Int
     var minute: Int
     
     var description: String {
         return "\(hour):\(minute)"
     }
+    
 }
