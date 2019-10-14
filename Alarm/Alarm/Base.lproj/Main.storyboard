@@ -52,9 +52,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="alarmSwitch" destination="vFx-kZ-BPk" id="ckn-if-K7T"/>
-                                    <outlet property="time" destination="1BO-zs-f8S" id="51h-V1-aJ1"/>
-                                    <outlet property="title" destination="kfl-Eh-ifr" id="EXA-k8-yjJ"/>
+                                    <outlet property="time" destination="1BO-zs-f8S" id="4xt-Tn-5XK"/>
+                                    <outlet property="title" destination="kfl-Eh-ifr" id="I4E-uW-1ze"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

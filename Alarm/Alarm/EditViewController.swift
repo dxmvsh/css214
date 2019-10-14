@@ -17,31 +17,34 @@ class EditViewController: UIViewController {
     
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var alarmDate: UIDatePicker!
-    var alarm: Alarm?
+    
     var index: Int?
+    var alarm: Alarm?
     var delegate: EditViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        
-        let date = dateFormatter.date(from: String(describing: alarm!.time))
-        
-        alarmDate.date = date!
-        titleTextField.text = alarm?.title
+        configureOutlets()
         navigationItem.title = "Change Alarm"
     }
     
+    private func configureOutlets() {
+        alarmDate.date = getDate()!
+        titleTextField.text = alarm?.title
+    }
+    
+    private func getDate() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        let date = dateFormatter.date(from: String(describing: alarm!.time))
+        return date
+    }
+    
     @IBAction func changeAlarm(_ sender: Any) {
-        print("AAAAABBB")
-        guard let title = titleTextField.text else { return }
-        guard let index = index else { return }
+        guard let title = titleTextField.text,
+              let index = index else { return }
         let date = alarmDate.date
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let minute = calendar.component(.minute, from: date)
-        let alarmModified = Alarm(title: title, time: Time(hour: hour, minute: minute))
+        let alarmModified = Alarm(title: title, time: Time.getTime(from: date))
         delegate?.changeAlarm(at: index, to: alarmModified)
         navigationController?.popViewController(animated: true)
     }
@@ -51,4 +54,5 @@ class EditViewController: UIViewController {
         delegate?.deleteAlarm(at: index)
         navigationController?.popViewController(animated: true)
     }
+    
 }
