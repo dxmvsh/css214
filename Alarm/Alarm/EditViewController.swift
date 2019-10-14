@@ -24,7 +24,7 @@ class EditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat =  "HH:mm"
+        dateFormatter.dateFormat = "HH:mm"
         
         let date = dateFormatter.date(from: String(describing: alarm!.time))
         
@@ -33,14 +33,15 @@ class EditViewController: UIViewController {
     }
     
     @IBAction func changeAlarm(_ sender: Any) {
+        print("AAAAABBB")
         guard let title = titleTextField.text else { return }
         guard let index = index else { return }
         let date = alarmDate.date
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
         let minute = calendar.component(.minute, from: date)
-        let alarm = Alarm(title: title, time: Time(hour: hour, minute: minute))
-        delegate?.changeAlarm(at: index, to: alarm)
+        let alarmModified = Alarm(title: title, time: Time(hour: hour, minute: minute))
+        delegate?.changeAlarm(at: index, to: alarmModified)
         navigationController?.popViewController(animated: true)
     }
     

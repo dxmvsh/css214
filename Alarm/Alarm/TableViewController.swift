@@ -36,8 +36,8 @@ class TableViewController: UITableViewController {
         case .editVC(let index):
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditViewController") as! EditViewController
             vc.delegate = self
-            vc.alarm = alarms[index]
             vc.index = index
+            vc.alarm = alarms[index]
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -66,6 +66,7 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         navigate(to: .editVC(indexPath.row))
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     /*
     // Override to support conditional editing of the table view.

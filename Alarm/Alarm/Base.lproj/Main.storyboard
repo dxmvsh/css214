@@ -157,7 +157,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="change:" destination="DOe-bH-Wzk" eventType="touchUpInside" id="4LC-zd-SGv"/>
                                     <action selector="changeAlarm:" destination="DOe-bH-Wzk" eventType="touchUpInside" id="ZPD-IL-CVV"/>
                                 </connections>
                             </button>
