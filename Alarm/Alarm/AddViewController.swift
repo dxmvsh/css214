@@ -18,7 +18,7 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.title = "New Alarm"
     }
 
     @IBAction func save(_ sender: Any) {

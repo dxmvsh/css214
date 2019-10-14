@@ -30,6 +30,7 @@ class EditViewController: UIViewController {
         
         alarmDate.date = date!
         titleTextField.text = alarm?.title
+        navigationItem.title = "Change Alarm"
     }
     
     @IBAction func changeAlarm(_ sender: Any) {

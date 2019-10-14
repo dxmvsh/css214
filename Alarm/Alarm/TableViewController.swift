@@ -21,6 +21,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addAlarm))
+        navigationItem.title = "Alarms"
     }
     
     @objc private func addAlarm() {
@@ -67,6 +68,15 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         navigate(to: .editVC(indexPath.row))
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") { (rowAction, indexPath) in
+            self.deleteAlarm(at: indexPath.row)
+        }
+        deleteAction.backgroundColor = .red
+        
+        return [deleteAction]
     }
     /*
     // Override to support conditional editing of the table view.
