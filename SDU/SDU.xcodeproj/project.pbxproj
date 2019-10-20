@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D290C49235591AB0083D4E9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D290C48235591AB0083D4E9 /* NetworkManager.swift */; };
+		1DC90EF923559722007FD166 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC90EF823559722007FD166 /* DataManager.swift */; };
+		1DC90EFC2355974B007FD166 /* Faculty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC90EFB2355974B007FD166 /* Faculty.swift */; };
+		1DC90EFE23559756007FD166 /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC90EFD23559756007FD166 /* Club.swift */; };
+		1DC90F002355976F007FD166 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC90EFF2355976F007FD166 /* News.swift */; };
+		1DC90F0223559787007FD166 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC90F0123559787007FD166 /* Contact.swift */; };
+		1DC90F06235597DF007FD166 /* SocialNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC90F05235597DF007FD166 /* SocialNetwork.swift */; };
 		1DCDA1422350B44A0092BDCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCDA1412350B44A0092BDCF /* AppDelegate.swift */; };
 		1DCDA1442350B44A0092BDCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCDA1432350B44A0092BDCF /* ViewController.swift */; };
 		1DCDA1472350B44A0092BDCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DCDA1452350B44A0092BDCF /* Main.storyboard */; };
@@ -17,6 +24,13 @@
 
 /* Begin PBXFileReference section */
 		19C098F43D90585930D1886F /* Pods-SDU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDU.debug.xcconfig"; path = "Target Support Files/Pods-SDU/Pods-SDU.debug.xcconfig"; sourceTree = "<group>"; };
+		1D290C48235591AB0083D4E9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1DC90EF823559722007FD166 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		1DC90EFB2355974B007FD166 /* Faculty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faculty.swift; sourceTree = "<group>"; };
+		1DC90EFD23559756007FD166 /* Club.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
+		1DC90EFF2355976F007FD166 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		1DC90F0123559787007FD166 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		1DC90F05235597DF007FD166 /* SocialNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetwork.swift; sourceTree = "<group>"; };
 		1DCDA13E2350B44A0092BDCF /* SDU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DCDA1412350B44A0092BDCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DCDA1432350B44A0092BDCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +54,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D555C50235C568000886621 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1D290C48235591AB0083D4E9 /* NetworkManager.swift */,
+				1DC90EF823559722007FD166 /* DataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		1DC90EFA2355973F007FD166 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DC90EFB2355974B007FD166 /* Faculty.swift */,
+				1DC90EFD23559756007FD166 /* Club.swift */,
+				1DC90EFF2355976F007FD166 /* News.swift */,
+				1DC90F0123559787007FD166 /* Contact.swift */,
+				1DC90F05235597DF007FD166 /* SocialNetwork.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1DCDA1352350B44A0092BDCF = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +96,8 @@
 		1DCDA1402350B44A0092BDCF /* SDU */ = {
 			isa = PBXGroup;
 			children = (
+				1D555C50235C568000886621 /* Managers */,
+				1DC90EFA2355973F007FD166 /* Model */,
 				1DCDA1432350B44A0092BDCF /* ViewController.swift */,
 				1DCDA1452350B44A0092BDCF /* Main.storyboard */,
 				1DCDA14D2350B44C0092BDCF /* Info.plist */,
@@ -211,8 +248,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DC90EFC2355974B007FD166 /* Faculty.swift in Sources */,
+				1DC90EFE23559756007FD166 /* Club.swift in Sources */,
+				1D290C49235591AB0083D4E9 /* NetworkManager.swift in Sources */,
+				1DC90EF923559722007FD166 /* DataManager.swift in Sources */,
+				1DC90F0223559787007FD166 /* Contact.swift in Sources */,
+				1DC90F002355976F007FD166 /* News.swift in Sources */,
 				1DCDA1442350B44A0092BDCF /* ViewController.swift in Sources */,
 				1DCDA1422350B44A0092BDCF /* AppDelegate.swift in Sources */,
+				1DC90F06235597DF007FD166 /* SocialNetwork.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
