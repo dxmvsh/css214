@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 struct Club {
     var name: String
     var description: String
+    var image: UIImage
 }

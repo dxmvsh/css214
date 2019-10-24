@@ -9,7 +9,6 @@
 import Foundation
 
 struct Contact {
-    var title: String
     var phoneNumber: String
     var email: String
 }

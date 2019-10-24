@@ -1,5 +1,5 @@
 //
-//  NetworkManager.swift
+//  Faculty.swift
 //  SDU
 //
 //  Created by Dimash on 10/15/19.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-class NetworkManager {
-    
-    
-    
+struct Faculty {
+    var name: String
+    var description: String
+    var programs: [Program]
 }
