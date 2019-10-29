@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 class DataManager {
-    let contacts = [
+    static let contacts = [
         Contact(phoneNumber: "+7 (727) 307 95 65",
                 email: "info@sdu.edu.kz​"),
     ]
     
-    let socialNetworks = [
+    static let socialNetworks = [
         SocialNetwork(name: "Facebook",
                       url: URL(string: "https://www.facebook.com/sdukz/")!),
         SocialNetwork(name: "VK",
@@ -24,7 +24,7 @@ class DataManager {
                       url: URL(string: "https://www.instagram.com/sdukz/")!),
     ]
     
-    let clubs = [
+    static let clubs = [
         Club(name: Strings.ACADEMIC_CLUB_NAME,
              description: Strings.ACADEMIC_CLUB_DESCRIPTION,
              image: UIImage(named: "academic-club")!),
@@ -36,7 +36,7 @@ class DataManager {
              image: UIImage(named: "red-crescent")!),
     ]
     
-    let news = [
+    static let news = [
         News(title: Strings.NEWS1_TITLE,
              description: Strings.NEWS1_DESCRIPTION,
              image: UIImage(named: "news1-image")!),
@@ -47,7 +47,7 @@ class DataManager {
              description: Strings.NEWS3_DESCRIPTION,
              image: UIImage(named: "news3-image")!),
     ]
-    let faculties = [
+    static let faculties = [
         Faculty(name: "Business School",
                 description: Strings.BUSINESS_SCHOOL_DESCRIPTION,
                 programs: [
