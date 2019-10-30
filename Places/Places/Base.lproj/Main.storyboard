@@ -37,10 +37,16 @@
                                         <rect key="frame" x="8" y="26" width="16" height="22"/>
                                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="previous"/>
+                                        <connections>
+                                            <action selector="previousTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CQy-f9-ulb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJ9-kg-T35">
                                         <rect key="frame" x="390" y="26" width="16" height="22"/>
                                         <state key="normal" image="next"/>
+                                        <connections>
+                                            <action selector="nextTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DTV-l9-dGa"/>
+                                        </connections>
                                     </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JdT-gh-le9">
                                         <rect key="frame" x="101" y="23.5" width="212" height="28"/>
@@ -83,6 +89,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6mP-aT-Wgk"/>
                     <connections>
+                        <outlet property="mapView" destination="1xI-lu-09R" id="9BY-c7-WfK"/>
                         <outlet property="segmentedControl" destination="JdT-gh-le9" id="4DU-Qs-ynw"/>
                     </connections>
                 </viewController>
