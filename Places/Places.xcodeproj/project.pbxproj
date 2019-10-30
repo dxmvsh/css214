@@ -54,7 +54,6 @@
 		1D975CC223681FB3000C9FD1 /* Places */ = {
 			isa = PBXGroup;
 			children = (
-				1D975CD5236821B0000C9FD1 /* Views */,
 				1D975CC323681FB3000C9FD1 /* AppDelegate.swift */,
 				1D975CC523681FB3000C9FD1 /* ViewController.swift */,
 				1D975CC723681FB3000C9FD1 /* Main.storyboard */,
@@ -63,13 +62,6 @@
 				1D975CCF23681FB6000C9FD1 /* Info.plist */,
 			);
 			path = Places;
-			sourceTree = "<group>";
-		};
-		1D975CD5236821B0000C9FD1 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
