@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var segmentedControl: UISegmentedControl!
     
+    let mapTypes: [MKMapType] = [.standard, .satellite, .hybrid]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -31,8 +33,15 @@ class ViewController: UIViewController {
     
     func setupView() {
         segmentedControl.tintColor = .black
+        
+        segmentedControl.addTarget(self, action: #selector(changeMapType), for: .valueChanged)
+        
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(showPopUp(sender: )))
         mapView.addGestureRecognizer(longPressGestureRecognizer)
+    }
+    
+    @objc private func changeMapType() {
+        mapView.mapType = mapTypes[segmentedControl.selectedSegmentIndex]
     }
     
     @objc private func showPopUp(sender: UILongPressGestureRecognizer) {
