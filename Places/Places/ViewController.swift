@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         setupNavigationBar()
         setupView()
     }
@@ -93,6 +94,28 @@ class ViewController: UIViewController {
     
     @IBAction func nextTapped(_ sender: Any) {
         
+    }
+    
+}
+
+extension ViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else { return nil }
+        
+        let identifier = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
+            let editButton = UIButton(type: .detailDisclosure)
+            annotationView!.rightCalloutAccessoryView = editButton
+        } else {
+            annotationView!.annotation = annotation
+        }
+        
+        return annotationView
     }
     
 }

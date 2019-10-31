@@ -39,20 +39,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D08AC4F236A198B00A7696B /* New Group */ = {
+		1D08AC4F236A198B00A7696B /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				1D08AC50236A199900A7696B /* Annotation.swift */,
 			);
-			path = "New Group";
+			path = Model;
 			sourceTree = "<group>";
 		};
-		1D08AC52236A210E00A7696B /* New Group1 */ = {
+		1D08AC52236A210E00A7696B /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				1D08AC53236A211D00A7696B /* DataManager.swift */,
 			);
-			path = "New Group1";
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		1D975CB723681FB3000C9FD1 = {
@@ -74,8 +74,8 @@
 		1D975CC223681FB3000C9FD1 /* Places */ = {
 			isa = PBXGroup;
 			children = (
-				1D08AC52236A210E00A7696B /* New Group1 */,
-				1D08AC4F236A198B00A7696B /* New Group */,
+				1D08AC52236A210E00A7696B /* Manager */,
+				1D08AC4F236A198B00A7696B /* Model */,
 				1D975CC323681FB3000C9FD1 /* AppDelegate.swift */,
 				1D975CC523681FB3000C9FD1 /* ViewController.swift */,
 				1D975CC723681FB3000C9FD1 /* Main.storyboard */,
