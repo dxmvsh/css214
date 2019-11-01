@@ -24,11 +24,26 @@ class ViewController: UIViewController {
     }
     
     func setupNavigationBar() {
+        setNavigationBarBlur()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks,
+                                                            target: self,
+                                                            action: #selector(showPlacesTableView))
+    }
+    
+    private func setNavigationBarBlur() {
         let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
         blurEffectView.frame = (self.navigationController?.navigationBar.bounds.insetBy(dx: 0, dy: -10).offsetBy(dx: 0, dy: -10))!
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.addSubview(blurEffectView)
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.addSubview(blurEffectView)
+        navigationController?.navigationBar.sendSubviewToBack(blurEffectView)
+    }
+    
+    @objc private func showPlacesTableView() {
+        let placesVC = storyboard?.instantiateViewController(withIdentifier: "PlacesNavigationController") as! UINavigationController
+        placesVC.modalPresentationStyle = .overCurrentContext
+
+        navigationController?.present(placesVC, animated: true, completion: nil)
     }
     
     func setupView() {
