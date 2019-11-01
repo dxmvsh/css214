@@ -85,10 +85,10 @@ class ViewController: UIViewController {
                                       style: .default) { (_) in
                                         let title = alertController.textFields?[0].text
                                         let description = alertController.textFields?[1].text
-                                        let annotation = Annotation(title: title ?? "",
+                                        let place = Place(title: title ?? "",
                                                                     description: description ?? "",
                                                                     coordinate: self.mapView.convert(location, toCoordinateFrom: self.mapView))
-                                        self.add(annotation: annotation)
+                                        self.add(place: place)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel",
@@ -99,17 +99,17 @@ class ViewController: UIViewController {
         return alertController
     }
     
-    private func add(annotation: Annotation) {
-        DataManager.add(annotation)
-        addPin(with: annotation)
+    private func add(place: Place) {
+        DataManager.add(place)
+        addAnnotation(with: place)
     }
     
-    private func addPin(with annotation: Annotation) {
-        let pin = MKPointAnnotation()
-        pin.coordinate = annotation.coordinate
-        pin.title = annotation.title
-        pin.subtitle = annotation.description
-        mapView.addAnnotation(pin)
+    private func addAnnotation(with place: Place) {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = place.coordinate
+        annotation.title = place.title
+        annotation.subtitle = place.description
+        mapView.addAnnotation(annotation)
     }
     
     @IBAction func previousTapped(_ sender: Any) {

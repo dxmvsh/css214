@@ -63,14 +63,14 @@ class PlacesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataManager.annotations.count
+        return DataManager.places.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath)
-        let annotation = DataManager.annotations[indexPath.row]
-        cell.textLabel?.text = annotation.title
-        cell.detailTextLabel?.text = annotation.description
+        let place = DataManager.places[indexPath.row]
+        cell.textLabel?.text = place.title
+        cell.detailTextLabel?.text = place.description
 
         return cell
     }

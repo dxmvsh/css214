@@ -9,8 +9,8 @@
 import Foundation
 
 class DataManager {
-    static var annotations = [Annotation]()
-    static func add(_ annotation: Annotation) {
-        annotations.append(annotation)
+    static var places = [Place]()
+    static func add(_ place: Place) {
+        places.append(place)
     }
 }
