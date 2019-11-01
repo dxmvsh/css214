@@ -16,6 +16,16 @@ class ViewController: UIViewController {
     
     let mapTypes: [MKMapType] = [.standard, .satellite, .hybrid]
     
+    var currentPlaceIndex: Int? {
+        didSet {
+            updateNavigationItemTitle()
+        }
+    }
+    
+    var lastPlaceIndex = {
+        return DataManager.places.count - 1
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -48,11 +58,17 @@ class ViewController: UIViewController {
     
     func setupView() {
         segmentedControl.tintColor = .black
-        
+
         segmentedControl.addTarget(self, action: #selector(changeMapType), for: .valueChanged)
         
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(showPopUp(sender: )))
         mapView.addGestureRecognizer(longPressGestureRecognizer)
+    }
+    
+    private func updateNavigationItemTitle() {
+        guard let currentPlaceIndex = currentPlaceIndex else { return }
+        let place = DataManager.places[currentPlaceIndex]
+        navigationItem.title = place.title
     }
     
     @objc private func changeMapType() {
@@ -102,6 +118,7 @@ class ViewController: UIViewController {
     private func add(place: Place) {
         DataManager.add(place)
         addAnnotation(with: place)
+        setCurrentPlace(index: lastPlaceIndex())
     }
     
     private func addAnnotation(with place: Place) {
@@ -112,14 +129,43 @@ class ViewController: UIViewController {
         mapView.addAnnotation(annotation)
     }
     
-    @IBAction func previousTapped(_ sender: Any) {
-        
+    private func setCurrentPlace(index: Int) {
+        currentPlaceIndex = index
     }
     
     @IBAction func nextTapped(_ sender: Any) {
-        
+        navigateTo(next: true)
     }
     
+    @IBAction func previousTapped(_ sender: Any) {
+        navigateTo(next: false)
+    }
+    
+    
+    private func navigateTo(next: Bool) {
+        guard var currentIndex = currentPlaceIndex else { return }
+        
+        if next {
+            currentIndex += 1
+        } else {
+            currentIndex -= 1
+        }
+        
+        checkIfOutOfBounds(index: &currentIndex)
+        
+        currentPlaceIndex = currentIndex
+        let place = DataManager.places[currentIndex]
+        mapView.setCenter(place.coordinate, animated: true)
+    }
+    
+    private func checkIfOutOfBounds(index: inout Int) {
+        if index > lastPlaceIndex() {
+            index = 0
+        }
+        if index < 0 {
+            index = lastPlaceIndex()
+        }
+    }
 }
 
 extension ViewController: MKMapViewDelegate {
