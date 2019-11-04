@@ -60,7 +60,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             alert.addAction(UIAlertAction.init(title: "No", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
-        deleteAction.backgroundColor = .red
+        r
         
         return [deleteAction, editAction]
     }

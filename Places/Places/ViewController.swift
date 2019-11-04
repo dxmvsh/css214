@@ -191,4 +191,7 @@ extension ViewController: PlacesTableViewDelegate {
         updateIndex(to: index)
         navigateTo(index: index)
     }
+    func removePlace(at index: Int) {
+        mapView.removeAnnotation(mapView.annotations[index])
+    }
 }

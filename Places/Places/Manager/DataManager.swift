@@ -13,4 +13,7 @@ class DataManager {
     static func add(_ place: Place) {
         places.append(place)
     }
+    static func deletePlace(at index: Int) {
+        places.remove(at: index)
+    }
 }

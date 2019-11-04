@@ -10,6 +10,7 @@ import UIKit
 
 protocol PlacesTableViewDelegate {
     func changePlace(at index: Int)
+    func removePlace(at index: Int)
 }
 
 class PlacesTableViewController: UITableViewController {
@@ -77,13 +78,30 @@ class PlacesTableViewController: UITableViewController {
         let place = DataManager.places[indexPath.row]
         cell.textLabel?.text = place.title
         cell.detailTextLabel?.text = place.description
-
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.changePlace(at: indexPath.row)
         dismiss(animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .normal, title: "Delete") {
+            (rowAction,indexPath) in
+            let place = DataManager.places[indexPath.row]
+            let alert = UIAlertController.init(title: "Delete Place?", message: "Are you sure you want to delete \(place.title)?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "Yes", style: .destructive, handler: { _ in
+                DataManager.deletePlace(at: indexPath.row)
+                tableView.reloadData()
+                self.delegate?.removePlace(at: indexPath.row)
+            }))
+            alert.addAction(UIAlertAction.init(title: "No", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        deleteAction.backgroundColor = .red
+        return [deleteAction]
     }
     
 }
