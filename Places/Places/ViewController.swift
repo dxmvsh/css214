@@ -134,27 +134,31 @@ class ViewController: UIViewController {
     }
     
     @IBAction func nextTapped(_ sender: Any) {
-        navigateTo(next: true)
+        updateIndex(next: true)
+        navigateTo(index: currentPlaceIndex!)
     }
     
     @IBAction func previousTapped(_ sender: Any) {
-        navigateTo(next: false)
+        updateIndex(next: false)
+        navigateTo(index: currentPlaceIndex!)
     }
     
-    
-    private func navigateTo(next: Bool) {
+    private func updateIndex(next: Bool) {
         guard var currentIndex = currentPlaceIndex else { return }
-        
+
         if next {
             currentIndex += 1
         } else {
             currentIndex -= 1
         }
-        
+
         checkIfOutOfBounds(index: &currentIndex)
-        
+
         currentPlaceIndex = currentIndex
-        let place = DataManager.places[currentIndex]
+    }
+    
+    private func navigateTo(index: Int) {
+        let place = DataManager.places[index]
         mapView.setCenter(place.coordinate, animated: true)
     }
     
