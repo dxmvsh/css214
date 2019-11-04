@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol PlacesTableViewDelegate {
+    func changePlace(at index: Int)
+}
+
 class PlacesTableViewController: UITableViewController {
 
+    var delegate: PlacesTableViewDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableViewBackground()
@@ -74,5 +80,10 @@ class PlacesTableViewController: UITableViewController {
 
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.changePlace(at: indexPath.row)
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

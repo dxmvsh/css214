@@ -52,7 +52,8 @@ class ViewController: UIViewController {
     @objc private func showPlacesTableView() {
         let placesVC = storyboard?.instantiateViewController(withIdentifier: "PlacesNavigationController") as! UINavigationController
         placesVC.modalPresentationStyle = .overCurrentContext
-
+        let placesTVC = placesVC.viewControllers[0] as! PlacesTableViewController
+        placesTVC.delegate = self
         navigationController?.present(placesVC, animated: true, completion: nil)
     }
     
@@ -118,7 +119,7 @@ class ViewController: UIViewController {
     private func add(place: Place) {
         DataManager.add(place)
         addAnnotation(with: place)
-        setCurrentPlace(index: lastPlaceIndex())
+        updateIndex(to: lastPlaceIndex())
     }
     
     private func addAnnotation(with place: Place) {
@@ -129,32 +130,23 @@ class ViewController: UIViewController {
         mapView.addAnnotation(annotation)
     }
     
-    private func setCurrentPlace(index: Int) {
-        currentPlaceIndex = index
-    }
-    
     @IBAction func nextTapped(_ sender: Any) {
-        updateIndex(next: true)
+        guard let currentIndex = currentPlaceIndex else { return }
+        updateIndex(to: currentIndex + 1)
         navigateTo(index: currentPlaceIndex!)
     }
     
     @IBAction func previousTapped(_ sender: Any) {
-        updateIndex(next: false)
+        guard let currentIndex = currentPlaceIndex else { return }
+        updateIndex(to: currentIndex - 1)
         navigateTo(index: currentPlaceIndex!)
     }
     
-    private func updateIndex(next: Bool) {
-        guard var currentIndex = currentPlaceIndex else { return }
+    private func updateIndex(to index: Int) {
+        var index = index
+        checkIfOutOfBounds(index: &index)
 
-        if next {
-            currentIndex += 1
-        } else {
-            currentIndex -= 1
-        }
-
-        checkIfOutOfBounds(index: &currentIndex)
-
-        currentPlaceIndex = currentIndex
+        currentPlaceIndex = index
     }
     
     private func navigateTo(index: Int) {
@@ -192,4 +184,11 @@ extension ViewController: MKMapViewDelegate {
         return annotationView
     }
     
+}
+
+extension ViewController: PlacesTableViewDelegate {
+    func changePlace(at index: Int) {
+        updateIndex(to: index)
+        navigateTo(index: index)
+    }
 }
