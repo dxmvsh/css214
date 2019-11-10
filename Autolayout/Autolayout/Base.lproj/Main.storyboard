@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e4w-Fm-v0T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6z8-jx-fge">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,9 +11,50 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="KyJ-fs-ZGJ">
+            <objects>
+                <viewController id="Qd2-I9-WBS" customClass="ViewController" customModule="Autolayout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="heQ-cO-w3Z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b5S-5X-Vha">
+                                <rect key="frame" x="186.5" y="441" width="41" height="68"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyV-lj-m7Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="41" height="30"/>
+                                        <state key="normal" title="Cards"/>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="Qd2-I9-WBS" eventType="touchUpInside" id="CYV-tS-ktM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWU-2u-FRl">
+                                        <rect key="frame" x="0.0" y="38" width="41" height="30"/>
+                                        <state key="normal" title="Note"/>
+                                        <connections>
+                                            <action selector="buttonTapped:" destination="Qd2-I9-WBS" eventType="touchUpInside" id="EM1-Op-FQg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="b5S-5X-Vha" firstAttribute="centerY" secondItem="8Ri-1G-pEv" secondAttribute="centerY" id="BKC-f2-poR"/>
+                            <constraint firstItem="b5S-5X-Vha" firstAttribute="centerX" secondItem="8Ri-1G-pEv" secondAttribute="centerX" id="bQJ-Fw-Ln6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8Ri-1G-pEv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zqN-mG-YaK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PuP-gJ-rDY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-101.44927536231884" y="107.8125"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Autolayout" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,12 +294,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-72" y="108"/>
+            <point key="canvasLocation" x="890" y="-247"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vwj-lJ-RqZ">
             <objects>
-                <viewController id="e4w-Fm-v0T" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoteViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="e4w-Fm-v0T" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lRA-UA-XTT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -365,7 +406,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ub-vw-A9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766.07142857142856" y="107.24637681159422"/>
+            <point key="canvasLocation" x="890" y="490"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bzu-yM-BSZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6z8-jx-fge" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4cG-ii-ULa">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Qd2-I9-WBS" kind="relationship" relationship="rootViewController" id="xXc-ZW-UPD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N9c-ez-7lh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1013.0434782608696" y="107.8125"/>
         </scene>
     </scenes>
 </document>

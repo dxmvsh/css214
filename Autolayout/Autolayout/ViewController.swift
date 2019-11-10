@@ -10,11 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let viewControllerIdentifiers = [
+        "Cards": "CardsViewController",
+        "Note": "NoteViewController",
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        guard let buttonTitle = sender.titleLabel?.text else { return }
+        let vc = storyboard?.instantiateViewController(withIdentifier: viewControllerIdentifiers[buttonTitle]!) as! UIViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }
 
