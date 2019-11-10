@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e4w-Fm-v0T">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -253,7 +253,119 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.61607142857142" y="108.69565217391305"/>
+            <point key="canvasLocation" x="-72" y="108"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vwj-lJ-RqZ">
+            <objects>
+                <viewController id="e4w-Fm-v0T" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lRA-UA-XTT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9u5-ha-vGS">
+                                <rect key="frame" x="10" y="54" width="394" height="113.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🗒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7H-pO-8iB">
+                                        <rect key="frame" x="0.0" y="0.0" width="102" height="113.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="95"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iQZ-GX-8Og">
+                                        <rect key="frame" x="112" y="0.0" width="282" height="113.5"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GdZ-jf-UXL">
+                                                <rect key="frame" x="0.0" y="0.0" width="282" height="32.5"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bwq-cI-znu">
+                                                <rect key="frame" x="0.0" y="40.5" width="282" height="32.5"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nick Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ej6-FW-Foc">
+                                                <rect key="frame" x="0.0" y="81" width="282" height="32.5"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Notes..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cjP-Gc-uPA">
+                                <rect key="frame" x="20" y="205" width="374" height="619"/>
+                                <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="paH-an-3cE">
+                                <rect key="frame" x="10" y="832" width="394" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbl-jc-VhO">
+                                        <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
+                                        <state key="normal" title="Clear"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RK-35-Ej8">
+                                        <rect key="frame" x="202" y="0.0" width="192" height="30"/>
+                                        <state key="normal" title="Save"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="paH-an-3cE" firstAttribute="top" secondItem="cjP-Gc-uPA" secondAttribute="bottom" constant="8" id="DmQ-7R-x3D"/>
+                            <constraint firstItem="paH-an-3cE" firstAttribute="top" secondItem="9u5-ha-vGS" secondAttribute="bottom" constant="239.5" id="FsP-84-yGu"/>
+                            <constraint firstItem="9u5-ha-vGS" firstAttribute="leading" secondItem="U82-Tj-g3y" secondAttribute="leading" constant="10" id="MF9-Ro-eT8"/>
+                            <constraint firstItem="cjP-Gc-uPA" firstAttribute="leading" secondItem="9u5-ha-vGS" secondAttribute="trailing" constant="138.5" id="Mub-TD-KzY">
+                                <variation key="widthClass=regular" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="cjP-Gc-uPA" firstAttribute="leading" secondItem="U82-Tj-g3y" secondAttribute="leading" constant="20" id="Y0J-IE-Ii6"/>
+                            <constraint firstItem="U82-Tj-g3y" firstAttribute="bottom" secondItem="paH-an-3cE" secondAttribute="bottom" id="fHC-fc-haf"/>
+                            <constraint firstItem="9u5-ha-vGS" firstAttribute="top" secondItem="U82-Tj-g3y" secondAttribute="top" constant="10" id="fcJ-3A-65s"/>
+                            <constraint firstItem="gbl-jc-VhO" firstAttribute="top" secondItem="9u5-ha-vGS" secondAttribute="bottom" constant="239.5" id="jdh-qL-Smd"/>
+                            <constraint firstItem="U82-Tj-g3y" firstAttribute="trailing" secondItem="paH-an-3cE" secondAttribute="trailing" constant="10" id="kcY-9L-L6n"/>
+                            <constraint firstItem="cjP-Gc-uPA" firstAttribute="top" secondItem="9u5-ha-vGS" secondAttribute="bottom" constant="37.5" id="n6B-FF-QMb"/>
+                            <constraint firstItem="cjP-Gc-uPA" firstAttribute="width" secondItem="9u5-ha-vGS" secondAttribute="width" id="pdL-lH-iI6"/>
+                            <constraint firstItem="paH-an-3cE" firstAttribute="leading" secondItem="U82-Tj-g3y" secondAttribute="leading" constant="10" id="q7s-CJ-7nv"/>
+                            <constraint firstItem="cjP-Gc-uPA" firstAttribute="top" secondItem="U82-Tj-g3y" secondAttribute="top" constant="161" id="uji-4i-BXc">
+                                <variation key="widthClass=regular" constant="10"/>
+                            </constraint>
+                            <constraint firstItem="U82-Tj-g3y" firstAttribute="trailing" secondItem="9u5-ha-vGS" secondAttribute="trailing" constant="10" id="ukb-mU-pLx"/>
+                            <constraint firstItem="U82-Tj-g3y" firstAttribute="trailing" secondItem="cjP-Gc-uPA" secondAttribute="trailing" constant="20" id="yCy-tN-Vq9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="U82-Tj-g3y"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="jdh-qL-Smd"/>
+                                <exclude reference="FsP-84-yGu"/>
+                                <exclude reference="Mub-TD-KzY"/>
+                                <exclude reference="pdL-lH-iI6"/>
+                                <exclude reference="uji-4i-BXc"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="ukb-mU-pLx"/>
+                                <exclude reference="jdh-qL-Smd"/>
+                                <include reference="FsP-84-yGu"/>
+                                <include reference="Mub-TD-KzY"/>
+                                <exclude reference="Y0J-IE-Ii6"/>
+                                <exclude reference="n6B-FF-QMb"/>
+                                <include reference="pdL-lH-iI6"/>
+                                <include reference="uji-4i-BXc"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ub-vw-A9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="766.07142857142856" y="107.24637681159422"/>
         </scene>
     </scenes>
 </document>
