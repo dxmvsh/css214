@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var segmentedControl: UISegmentedControl!
     
@@ -102,10 +102,11 @@ class ViewController: UIViewController {
                                       style: .default) { (_) in
                                         let title = alertController.textFields?[0].text
                                         let description = alertController.textFields?[1].text
-                                        let place = Place(title: title ?? "",
+                                        let place = PlaceModel(title: title ?? "",
                                                                     description: description ?? "",
                                                                     coordinate: self.mapView.convert(location, toCoordinateFrom: self.mapView))
                                         self.add(place: place)
+                                        
         }
         
         let cancelAction = UIAlertAction(title: "Cancel",
@@ -116,13 +117,13 @@ class ViewController: UIViewController {
         return alertController
     }
     
-    private func add(place: Place) {
+    private func add(place: PlaceModel) {
         DataManager.add(place)
         addAnnotation(with: place)
         updateIndex(to: lastPlaceIndex())
     }
     
-    private func addAnnotation(with place: Place) {
+    private func addAnnotation(with place: PlaceModel) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = place.coordinate
         annotation.title = place.title
@@ -184,6 +185,16 @@ extension ViewController: MKMapViewDelegate {
         return annotationView
     }
     
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView,
+            let annotation = view.annotation {
+            let editVC = storyboard?.instantiateViewController(withIdentifier: "EditViewController") as! EditViewController
+            editVC.delegate = self
+            editVC.editingPlaceIndex = mapView.annotations.firstIndex{$0 === annotation}!
+            navigationController?.pushViewController(editVC, animated: true)
+        }
+    }
+    
 }
 
 extension ViewController: PlacesTableViewDelegate {
@@ -194,4 +205,21 @@ extension ViewController: PlacesTableViewDelegate {
     func removePlace(at index: Int) {
         mapView.removeAnnotation(mapView.annotations[index])
     }
+}
+
+extension ViewController: EditViewControllerDelegate {
+    func updateAnnotations() {
+        mapView.removeAnnotations(mapView.annotations)
+        for place in DataManager.places {
+            let coordination = place.coordinate
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = coordination
+            mapView.addAnnotation(annotation)
+        }
+    }
+    
+    func updatePlace(at index: Int, title: String, description: String) {
+        DataManager.updatePlace(at: index, title, description)
+    }
+    
 }

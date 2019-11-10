@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1D08AC51236A199900A7696B /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D08AC50236A199900A7696B /* Annotation.swift */; };
 		1D08AC54236A211D00A7696B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D08AC53236A211D00A7696B /* DataManager.swift */; };
+		1D14AF6B23701FF800B6AE6B /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D14AF6A23701FF800B6AE6B /* EditViewController.swift */; };
+		1D290A6D2370312F0020B0B9 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1D290A6B2370312F0020B0B9 /* Model.xcdatamodeld */; };
 		1D975CC423681FB3000C9FD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D975CC323681FB3000C9FD1 /* AppDelegate.swift */; };
 		1D975CC623681FB3000C9FD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D975CC523681FB3000C9FD1 /* ViewController.swift */; };
 		1D975CC923681FB3000C9FD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D975CC723681FB3000C9FD1 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		1D08AC50236A199900A7696B /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		1D08AC53236A211D00A7696B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		1D14AF6A23701FF800B6AE6B /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		1D290A6C2370312F0020B0B9 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1D975CC023681FB3000C9FD1 /* Places.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Places.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D975CC323681FB3000C9FD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D975CC523681FB3000C9FD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,10 +85,12 @@
 				1D975CC323681FB3000C9FD1 /* AppDelegate.swift */,
 				1DDB47A8236B2FF900800DFE /* PlacesTableViewController.swift */,
 				1D975CC523681FB3000C9FD1 /* ViewController.swift */,
+				1D290A6B2370312F0020B0B9 /* Model.xcdatamodeld */,
 				1D975CC723681FB3000C9FD1 /* Main.storyboard */,
 				1D975CCA23681FB6000C9FD1 /* Assets.xcassets */,
 				1D975CCC23681FB6000C9FD1 /* LaunchScreen.storyboard */,
 				1D975CCF23681FB6000C9FD1 /* Info.plist */,
+				1D14AF6A23701FF800B6AE6B /* EditViewController.swift */,
 			);
 			path = Places;
 			sourceTree = "<group>";
@@ -162,6 +168,8 @@
 			files = (
 				1D975CC623681FB3000C9FD1 /* ViewController.swift in Sources */,
 				1D08AC54236A211D00A7696B /* DataManager.swift in Sources */,
+				1D14AF6B23701FF800B6AE6B /* EditViewController.swift in Sources */,
+				1D290A6D2370312F0020B0B9 /* Model.xcdatamodeld in Sources */,
 				1D08AC51236A199900A7696B /* Annotation.swift in Sources */,
 				1D975CC423681FB3000C9FD1 /* AppDelegate.swift in Sources */,
 				1DDB47A9236B2FF900800DFE /* PlacesTableViewController.swift in Sources */,
@@ -364,6 +372,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1D290A6B2370312F0020B0B9 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1D290A6C2370312F0020B0B9 /* Model.xcdatamodel */,
+			);
+			currentVersion = 1D290A6C2370312F0020B0B9 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1D975CB823681FB3000C9FD1 /* Project object */;
 }

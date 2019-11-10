@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-struct Place {
+struct PlaceModel {
     var title: String
     var description: String
     var coordinate: CLLocationCoordinate2D
